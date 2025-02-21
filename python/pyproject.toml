@@ -202,7 +202,7 @@ sequence = [
     { "script" = "scripts.absolute_links:update('README.md')"},
     { "cmd" = "poetry publish --build" },
     { "shell" = "git add README.md >/dev/null && git checkout HEAD README.md >/dev/null" },
-    { "cmd" = "git push && git push origin $(git describe --tags --exact-match)"}
+    { "shell" = "git push && git push origin $(git describe --tags --exact-match)"}
 ]
 
 [tool.poe.tasks.test]
