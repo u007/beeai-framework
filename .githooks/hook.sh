@@ -19,11 +19,6 @@ HAS_TS_FILES=$(echo "$STAGED_FILES" | grep -q "^$TS_DIR/" && echo 1 || echo 0)
 PY_DIR="python"
 HAS_PY_FILES=$(echo "$STAGED_FILES" | grep -q "^$PY_DIR/" && echo 1 || echo 0)
 
-if [ "$HAS_TS_FILES" -eq 1 ] && [ "$HAS_PY_FILES" -eq 1 ]; then
-  echo "Error: Cannot commit changes in both $TS_DIR and $PY_DIR at the same time."
-  exit 1
-fi
-
 # Run hooks based on staged files
 if [ "$HAS_TS_FILES" -eq 1  ] && grep -q "\"git:$HOOK_NAME\"" "$TS_DIR/package.json"; then
   echo "Running $HOOK_NAME hook in $TS_DIR..."
