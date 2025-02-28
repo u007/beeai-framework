@@ -58,6 +58,8 @@ from beeai_framework.utils.strings import create_strenum
 
 
 class DefaultRunner(BaseRunner):
+    use_native_tool_calling: bool = False
+
     def default_templates(self) -> BeeAgentTemplates:
         return BeeAgentTemplates(
             system=SystemPromptTemplate,
@@ -81,12 +83,12 @@ class DefaultRunner(BaseRunner):
                 ),
                 "tool_name": LinePrefixParserNode(
                     prefix="Function Name: ",
-                    field=ParserField.from_type(tool_names),
+                    field=ParserField.from_type(tool_names, trim=True),
                     next=["tool_input"],
                 ),  # validate enum
                 "tool_input": LinePrefixParserNode(
                     prefix="Function Input: ",
-                    field=ParserField.from_type(dict),
+                    field=ParserField.from_type(dict, trim=True),
                     next=["tool_output"],
                     is_end=True,
                 ),
@@ -163,7 +165,11 @@ class DefaultRunner(BaseRunner):
                     abort()
 
             output: ChatModelOutput = await self._input.llm.create(
-                ChatModelInput(messages=self.memory.messages[:], stream=True)
+                ChatModelInput(
+                    messages=self.memory.messages[:],
+                    stream=True,
+                    tools=self._input.tools if self.use_native_tool_calling else None,
+                )
             ).observe(lambda llm_emitter: llm_emitter.on("newToken", on_new_token))
 
             await parser.end()
