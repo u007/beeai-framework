@@ -34,7 +34,7 @@ def create_agent() -> BeeAgent:
         ChatModelParameters(temperature=0),
     )
 
-    # Configure tools with LangChain's Wikipedia tool
+    # Configure tools
     # tools = [OpenMeteoTool()]
     tools = [WikipediaTool()]
 
