@@ -62,6 +62,7 @@ class MCPTool(Tool[MCPToolOutput]):
         self._tool = tool
         self._name = tool.name
         self._description = tool.description or "No available description, use the tool based on its name and schema."
+
         self.emitter = Emitter.root().child(
             namespace=["tool", "mcp", self._name],
             creator=self,
