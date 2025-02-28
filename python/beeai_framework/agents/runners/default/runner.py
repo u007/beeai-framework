@@ -88,9 +88,10 @@ class DefaultRunner(BaseRunner):
                     prefix="Function Input: ",
                     field=ParserField.from_type(dict),
                     next=["tool_output"],
+                    is_end=True,
                 ),
                 "tool_output": LinePrefixParserNode(
-                    prefix="Function Input: ", field=ParserField.from_type(str), is_end=True, next=["final_answer"]
+                    prefix="Function Output: ", field=ParserField.from_type(str), is_end=True, next=["final_answer"]
                 ),
                 "final_answer": LinePrefixParserNode(
                     prefix="Final Answer: ", field=ParserField.from_type(str), is_end=True, is_start=True
@@ -104,7 +105,7 @@ class DefaultRunner(BaseRunner):
 
         async def on_error(error: Exception, _: RetryableContext) -> None:
             await input.emitter.emit("error", {"error": error, "meta": input.meta})
-            self._failedAttemptsCounter.use(error)
+            self._failed_attempts_counter.use(error)
 
             if isinstance(error, LinePrefixParserError):
                 if error.reason == LinePrefixParserError.Reason.NoDataReceived:
@@ -198,7 +199,7 @@ class DefaultRunner(BaseRunner):
         )
 
         if tool is None:
-            self._failedAttemptsCounter.use(
+            self._failed_attempts_counter.use(
                 Exception(f"Agent was trying to use non-existing tool '${input.state.tool_name}'")
             )
 
@@ -284,7 +285,7 @@ class DefaultRunner(BaseRunner):
         system_prompt: str = self.templates.system.render(
             SystemPromptTemplateInput(
                 tools=tool_defs,
-                tools_length=len(tool_defs),  # TODO Where do instructions come from
+                tools_length=len(tool_defs),
             )
         )
 
