@@ -1,5 +1,9 @@
 ## python_v0.1.3 (2025-03-03)
 
+### Features
+
+- **adapters** add Groq backend support (#450)
+
 ### Bug Fixes
 
 - **agents**: handle native tool calling and retries (#456)
