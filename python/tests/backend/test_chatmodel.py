@@ -12,7 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
 import asyncio
 from collections.abc import AsyncGenerator
 
@@ -24,6 +23,7 @@ from beeai_framework.adapters.groq.backend.chat import GroqChatModel
 from beeai_framework.adapters.ollama.backend.chat import OllamaChatModel
 from beeai_framework.adapters.openai.backend.chat import OpenAIChatModel
 from beeai_framework.adapters.watsonx.backend.chat import WatsonxChatModel
+from beeai_framework.adapters.xai.backend.chat import XAIChatModel
 from beeai_framework.backend.chat import (
     ChatModel,
     ChatModelInput,
@@ -31,7 +31,12 @@ from beeai_framework.backend.chat import (
     ChatModelStructureInput,
     ChatModelStructureOutput,
 )
-from beeai_framework.backend.message import AssistantMessage, CustomMessage, Message, UserMessage
+from beeai_framework.backend.message import (
+    AssistantMessage,
+    CustomMessage,
+    Message,
+    UserMessage,
+)
 from beeai_framework.cancellation import AbortSignal
 from beeai_framework.context import RunContext
 from beeai_framework.errors import AbortError
@@ -128,7 +133,11 @@ async def test_chat_model_stream(reverse_words_chat: ChatModel, chat_messages_li
 @pytest.mark.unit
 async def test_chat_model_abort(reverse_words_chat: ChatModel, chat_messages_list: list[Message]) -> None:
     with pytest.raises(AbortError):
-        await reverse_words_chat.create(messages=chat_messages_list, stream=True, abort_signal=AbortSignal.timeout(1))
+        await reverse_words_chat.create(
+            messages=chat_messages_list,
+            stream=True,
+            abort_signal=AbortSignal.timeout(1),
+        )
 
 
 @pytest.mark.unit
@@ -171,3 +180,6 @@ def test_chat_model_from(monkeypatch: pytest.MonkeyPatch) -> None:
 
     groq_chat_model = ChatModel.from_name("groq:gemma2-9b-it")
     assert isinstance(groq_chat_model, GroqChatModel)
+
+    xai_chat_model = ChatModel.from_name("xai:grok-2")
+    assert isinstance(xai_chat_model, XAIChatModel)
