@@ -13,7 +13,7 @@
 # limitations under the License.
 
 import datetime
-from collections.abc import Callable
+from typing import Any
 
 from beeai_framework.agents.runners.base import (
     BaseRunner,
@@ -168,18 +168,16 @@ class DefaultRunner(BaseRunner):
             parser.emitter.on("update", on_update)
             parser.emitter.on("partialUpdate", on_partial_update)
 
-            async def on_new_token(value: tuple[ChatModelOutput, Callable], event: EventMeta) -> None:
-                data, abort = value
-
+            async def on_new_token(data: dict[str, Any], event: EventMeta) -> None:
                 if parser.done:
-                    abort()
+                    data["abort"]()
                     return
 
-                chunk = data.get_text_content()
+                chunk = data["value"].get_text_content()
                 await parser.add(chunk)
 
                 if parser.partial_state.get("tool_output") is not None:
-                    abort()
+                    data["abort"]()
 
             output: ChatModelOutput = await self._input.llm.create(
                 messages=self.memory.messages[:],
