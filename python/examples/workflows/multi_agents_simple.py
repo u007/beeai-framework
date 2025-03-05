@@ -7,7 +7,7 @@ from beeai_framework.backend.chat import ChatModel
 from beeai_framework.backend.message import UserMessage
 from beeai_framework.errors import FrameworkError
 from beeai_framework.memory import UnconstrainedMemory
-from beeai_framework.tools.search.duckduckgo import DuckDuckGoSearchTool
+from beeai_framework.tools.search.wikipedia import WikipediaTool
 from beeai_framework.tools.weather.openmeteo import OpenMeteoTool
 from beeai_framework.workflows.agent import AgentFactoryInput, AgentWorkflow
 
@@ -18,19 +18,19 @@ async def main() -> None:
     workflow = AgentWorkflow(name="Smart assistant")
     workflow.add_agent(
         agent=AgentFactoryInput(
-            name="WeatherForecaster",
-            instructions="You are a weather assistant.",
-            tools=[OpenMeteoTool()],
+            name="Researcher",
+            instructions="You are a researcher assistant. Respond only if you can provide a useful answer.",
+            tools=[WikipediaTool()],
             llm=llm,
-            execution=AgentExecutionConfig(max_iterations=3, total_max_retries=10, max_retries_per_step=3),
         )
     )
     workflow.add_agent(
         agent=AgentFactoryInput(
-            name="Researcher",
-            instructions="You are a researcher assistant.",
-            tools=[DuckDuckGoSearchTool()],
+            name="WeatherForecaster",
+            instructions="You are a weather assistant. Respond only if you can provide a useful answer.",
+            tools=[OpenMeteoTool()],
             llm=llm,
+            execution=AgentExecutionConfig(max_iterations=3, total_max_retries=10, max_retries_per_step=3),
         )
     )
     workflow.add_agent(
@@ -42,7 +42,7 @@ responses which all are relevant. Ignore those where assistant do not know.""",
         )
     )
 
-    prompt = "What is the weather in New York?"
+    prompt = "What is the capital of France and what is the current weather there?"
     memory = UnconstrainedMemory()
     await memory.add(UserMessage(content=prompt))
     response = await workflow.run(messages=memory.messages)
