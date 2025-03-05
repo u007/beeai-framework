@@ -73,7 +73,7 @@
     },
     "git": {
       "commitMessage": "chore: release ${version}",
-      "tagName": "v${version}",
+      "tagName": "typescript_v${version}",
       "commitArgs": [
         "-s",
         "--no-verify"
