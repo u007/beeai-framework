@@ -1,3 +1,37 @@
+## python_v0.1.4 (2025-03-06)
+
+### Refactor
+
+- rename Bee agent to ReAct agent (#505)
+- move logger to the root (#504)
+- update user-facing event data to all be dict and add docs (#431)
+- **agents**: remove Bee branding from BaseAgent (#440)
+
+### Bug Fixes
+
+- improve decorated tool output (#499)
+- **backend**: correctly merge inference parameters (#496)
+- **backend**: tool calling, unify message content (#475)
+- **backend**: correctly merge inference parameters (#486)
+- **tools**: make emitter required (#461)
+- **workflows**: handle relative steps (#463)
+
+### Features
+
+- **adapters**: add Amazon Bedrock support (#466)
+- **examples**: adds logger examples and updates docs (#494)
+- **internals**: construct Pydantic model from JSON Schema (#502)
+- **adapters**: Add Google VertexAI support (#469)
+- **tools**: add MCP tool (#481)
+- langchain tool (#474)
+- **examples**: templates examples ts parity (#480)
+- **examples**: adds error examples and updates error docs (#490)
+- **agents**: simplify variable usage in prompt templates (#484)
+- improve PromptTemplate.render API (#476)
+- **examples**: Add custom_agent and bee_advanced examples (#462)
+- **agents**: handle message formatting (#470)
+- **adapters**: Add xAI backend (#445) (#446)
+
 ## python_v0.1.3 (2025-03-03)
 
 ### Features
