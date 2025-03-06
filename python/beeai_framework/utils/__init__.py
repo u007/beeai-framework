@@ -14,7 +14,6 @@
 
 
 from beeai_framework.utils.config import CONFIG
-from beeai_framework.utils.custom_logger import BeeLogger
 from beeai_framework.utils.events import MessageEvent
 
-__all__ = ["CONFIG", "BeeLogger", "MessageEvent"]
+__all__ = ["CONFIG", "MessageEvent"]
