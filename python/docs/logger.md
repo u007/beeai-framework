@@ -46,13 +46,14 @@ In the BeeAI framework, the `Logger` class is an abstraction built on top of Pyt
 To use the logger in your application:
 
 <!-- embedme examples/logger/base.py -->
+
 ```py
 import logging
 
-from beeai_framework.logger import BeeLogger
+from beeai_framework.logger import Logger
 
 # Configure logger with default log level
-logger = BeeLogger("app", level=logging.TRACE)
+logger = Logger("app", level=logging.TRACE)
 
 # Log at different levels
 logger.trace("Trace!")
@@ -80,7 +81,7 @@ The logger adds a TRACE level below DEBUG for extremely detailed logging:
 
 ```py
 # Configure a logger with a specific level
-logger = BeeLogger("app", level="TRACE")  # Or use logging constants like logging.DEBUG
+logger = Logger("app", level="TRACE")  # Or use logging constants like logging.DEBUG
 
 # Log with the custom TRACE level
 logger.trace("This is a very low-level trace message")
@@ -117,26 +118,27 @@ The logger integrates with BeeAI framework's error handling system through the `
 The Logger seamlessly integrates with agents in the framework. Below is an example that demonstrates how logging can be used in conjunction with agents and event emitters.
 
 <!-- embedme examples/logger/agent.py -->
+
 ```py
 import asyncio
 import logging
 import sys
 import traceback
 
-from beeai_framework.agents.bee.agent import BeeAgent
-from beeai_framework.agents.types import BeeRunOutput
+from beeai_framework.agents.react.agent import ReActAgent
+from beeai_framework.agents.react.types import ReActAgentRunOutput
 from beeai_framework.backend.chat import ChatModel
 from beeai_framework.errors import FrameworkError
-from beeai_framework.logger import BeeLogger
+from beeai_framework.logger import Logger
 from beeai_framework.memory.unconstrained_memory import UnconstrainedMemory
 
 
 async def main() -> None:
-    logger = BeeLogger("app", level=logging.TRACE)
+    logger = Logger("app", level=logging.TRACE)
 
-    agent = BeeAgent(llm=ChatModel.from_name("ollama:granite3.1-dense:8b"), tools=[], memory=UnconstrainedMemory())
+    agent = ReActAgent(llm=ChatModel.from_name("ollama:granite3.1-dense:8b"), tools=[], memory=UnconstrainedMemory())
 
-    output: BeeRunOutput = await agent.run("Hello!").observe(
+    output: ReActAgentRunOutput = await agent.run("Hello!").observe(
         lambda emitter: emitter.on(
             "update", lambda data, event: logger.info(f"Event {event.path} triggered by {type(event.creator).__name__}")
         )

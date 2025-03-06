@@ -17,7 +17,7 @@ import inspect
 from abc import ABC, abstractmethod
 from collections.abc import Callable
 from functools import cached_property
-from typing import Any, Generic
+from typing import Any, Generic, TypeAlias
 
 from pydantic import BaseModel, ConfigDict, ValidationError, create_model
 from typing_extensions import TypeVar
@@ -25,12 +25,12 @@ from typing_extensions import TypeVar
 from beeai_framework.cancellation import AbortSignal
 from beeai_framework.context import Run, RunContext, RunContextInput, RunInstance
 from beeai_framework.emitter.emitter import Emitter
-from beeai_framework.logger import BeeLogger
+from beeai_framework.logger import Logger
 from beeai_framework.retryable import Retryable, RetryableConfig, RetryableContext, RetryableInput
 from beeai_framework.tools.errors import ToolError, ToolInputValidationError
 from beeai_framework.utils.strings import to_json, to_safe_word
 
-logger = BeeLogger(__name__)
+logger = Logger(__name__)
 
 IN = TypeVar("IN", bound=BaseModel)
 
@@ -249,3 +249,6 @@ def tool(tool_function: Callable) -> Tool:
 
     f_tool = FunctionTool()
     return f_tool
+
+
+AnyTool: TypeAlias = Tool[BaseModel, ToolRunOptions, ToolOutput]

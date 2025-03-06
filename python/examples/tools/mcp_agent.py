@@ -10,13 +10,13 @@ from mcp import ClientSession, StdioServerParameters
 from mcp.client.stdio import stdio_client
 
 from beeai_framework import Tool
-from beeai_framework.agents.bee.agent import BeeAgent
+from beeai_framework.agents.react.agent import ReActAgent
 from beeai_framework.agents.types import AgentExecutionConfig
 from beeai_framework.backend.chat import ChatModel, ChatModelParameters
 from beeai_framework.emitter.emitter import Emitter, EventMeta
 from beeai_framework.emitter.types import EmitterOptions
 from beeai_framework.errors import FrameworkError
-from beeai_framework.logger import BeeLogger
+from beeai_framework.logger import Logger
 from beeai_framework.memory.token_memory import TokenMemory
 from beeai_framework.tools.mcp_tools import MCPTool
 from examples.helpers.io import ConsoleReader
@@ -27,7 +27,7 @@ load_dotenv()
 reader = ConsoleReader()
 
 # Configure logging - using DEBUG instead of trace
-logger = BeeLogger("app", level=logging.DEBUG)
+logger = Logger("app", level=logging.DEBUG)
 
 # Create server parameters for stdio connection
 server_params = StdioServerParameters(
@@ -51,7 +51,7 @@ async def slack_tool() -> MCPTool:
         return slack[0]
 
 
-async def create_agent() -> BeeAgent:
+async def create_agent() -> ReActAgent:
     """Create and configure the agent with tools and LLM"""
 
     # Other models to try:
@@ -68,7 +68,7 @@ async def create_agent() -> BeeAgent:
     tools: list[Tool] = [await slack_tool()]
 
     # Create agent with memory and tools
-    agent = BeeAgent(llm=llm, tools=tools, memory=TokenMemory(llm))
+    agent = ReActAgent(llm=llm, tools=tools, memory=TokenMemory(llm))
     return agent
 
 
