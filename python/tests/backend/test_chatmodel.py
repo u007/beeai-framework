@@ -19,6 +19,7 @@ import pytest
 import pytest_asyncio
 from pydantic import BaseModel
 
+from beeai_framework.adapters.amazon_bedrock.backend.chat import AmazonBedrockChatModel
 from beeai_framework.adapters.groq.backend.chat import GroqChatModel
 from beeai_framework.adapters.ollama.backend.chat import OllamaChatModel
 from beeai_framework.adapters.openai.backend.chat import OpenAIChatModel
@@ -189,3 +190,17 @@ def test_chat_model_from(monkeypatch: pytest.MonkeyPatch) -> None:
     monkeypatch.setenv("VERTEXAI_PROJECT", "myproject")
     vertexai_chat_model = ChatModel.from_name("vertexai:gemini-2.0-flash-lite-001")
     assert isinstance(vertexai_chat_model, VertexAIChatModel)
+
+    monkeypatch.setenv("VERTEXAI_PROJECT", "myproject")
+    vertexai_chat_model = ChatModel.from_name("vertexai:gemini-2.0-flash-lite-001")
+    assert isinstance(vertexai_chat_model, VertexAIChatModel)
+
+    monkeypatch.setenv("VERTEXAI_PROJECT", "myproject")
+    vertexai_chat_model = ChatModel.from_name("vertexai:gemini-2.0-flash-lite-001")
+    assert isinstance(vertexai_chat_model, VertexAIChatModel)
+
+    monkeypatch.setenv("AWS_ACCESS_KEY_ID", "secret1")
+    monkeypatch.setenv("AWS_SECRET_ACCESS_KEY", "secret2")
+    monkeypatch.setenv("AWS_REGION_NAME", "region1")
+    amazon_bedrock_chat_model = ChatModel.from_name("amazon_bedrock:meta.llama3-8b-instruct-v1:0")
+    assert isinstance(amazon_bedrock_chat_model, AmazonBedrockChatModel)
