@@ -12,19 +12,28 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+from typing import Generic, TypeVar
+
 from pydantic import BaseModel, InstanceOf
 
-from beeai_framework.tools.tool import AnyTool
+from beeai_framework.tools import ToolError
+from beeai_framework.tools.types import ToolOutput, ToolRunOptions
+
+TInput = TypeVar("TInput", bound=BaseModel)
 
 
-class AgentExecutionConfig(BaseModel):
-    total_max_retries: int | None = None
-    max_retries_per_step: int | None = None
-    max_iterations: int | None = None
+class ToolStartEvent(BaseModel, Generic[TInput]):
+    input: TInput
+    options: ToolRunOptions | None = None
 
 
-class AgentMeta(BaseModel):
-    name: str
-    description: str
-    tools: list[InstanceOf[AnyTool]]
-    extra_description: str | None = None
+class ToolSuccessEvent(BaseModel, Generic[TInput]):
+    output: InstanceOf[ToolOutput]
+    input: TInput
+    options: ToolRunOptions | None = None
+
+
+class ToolErrorEvent(BaseModel, Generic[TInput]):
+    error: InstanceOf[ToolError]
+    input: TInput
+    options: ToolRunOptions | None = None

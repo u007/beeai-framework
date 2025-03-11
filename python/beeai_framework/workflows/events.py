@@ -12,19 +12,31 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+from typing import Generic
+
 from pydantic import BaseModel, InstanceOf
+from typing_extensions import TypeVar
 
-from beeai_framework.tools.tool import AnyTool
+from beeai_framework.errors import FrameworkError
+from beeai_framework.workflows.types import WorkflowRun
+
+T = TypeVar("T", bound=BaseModel)
+K = TypeVar("K", default=str)
 
 
-class AgentExecutionConfig(BaseModel):
-    total_max_retries: int | None = None
-    max_retries_per_step: int | None = None
-    max_iterations: int | None = None
+class WorkflowStartEvent(BaseModel, Generic[T, K]):
+    run: WorkflowRun[T, K]
+    step: K
 
 
-class AgentMeta(BaseModel):
-    name: str
-    description: str
-    tools: list[InstanceOf[AnyTool]]
-    extra_description: str | None = None
+class WorkflowSuccessEvent(BaseModel, Generic[T, K]):
+    run: WorkflowRun[T, K]
+    state: T
+    step: K
+    next: K
+
+
+class WorkflowErrorEvent(BaseModel, Generic[T, K]):
+    run: WorkflowRun[T, K]
+    step: K
+    error: InstanceOf[FrameworkError]
