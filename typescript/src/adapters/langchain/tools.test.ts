@@ -22,7 +22,8 @@ import { verifyDeserialization } from "@tests/e2e/utils.js";
 describe("Langchain Tools", () => {
   const getLangChainTool = () => {
     return createTool(
-      ({ min, max }) => {
+      // @ts-expect-error wrong typings in zod >= 3.24
+      async ({ min, max }): Promise<number> => {
         return Math.floor(Math.random() * (max - min + 1)) + min;
       },
       {
