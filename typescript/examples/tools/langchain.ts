@@ -4,7 +4,6 @@ import { LangChainTool } from "beeai-framework/adapters/langchain/tools";
 
 // You can use an arbitrary LangChain tool (see https://js.langchain.com/docs/integrations/tools/)
 const generateRandomNumber = createTool(
-  // @ts-expect-error wrong typings in zod >= 3.24
   ({ min, max }) => {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   },
