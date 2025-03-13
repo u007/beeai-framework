@@ -1,3 +1,36 @@
+## python_v0.1.5 (2025-03-13)
+
+### BREAKING CHANGE
+
+- internal emit data types updated
+- rename "newToken" event to "new_token"
+
+### Refactor
+
+- return typed objects from internal emits (#581)
+- address mypy and turn on mypy commit hook and CI (#565)
+- Add emitter event types and fix mypy (#550)
+- **agents**: Add generics to BaseAgent and other mypy fixes (#517)
+
+### Bug Fixes
+
+- mcp tool error (#570)
+- improve workflow add_agent arguments (#518)
+- **backend**: handle event loop closed error (#523)
+- **tools**: handle non-existing locations in OpenMeteo (#513)
+- **emitter**: The "match all nested" matcher should match all nested (#515)
+
+### Features
+
+- **workflow**: rework agent workflow (#554)
+- **adapters**: support additional headers for OpenAI backend (#533)
+- **agents**: add remote agent for Beeai (#567)
+- **agents**: add tool calling agent (#551)
+- **agents**: rework base agent run and runcontext (#562)
+- **adapters**: Add Azure OpenAI support (#514)
+- Add Run.on API to directly add an event callback (#516)
+- **adapters**: add Anthropic support (#522)
+
 ## python_v0.1.4 (2025-03-06)
 
 ### Refactor
