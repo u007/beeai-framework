@@ -35,20 +35,20 @@
 - Added link checker to verify documentation links (#542, #568)
 - Addressed failing end-to-end tests (#508)
 
-### Migration Guide
+## Migration Guide
 
 This guide will help you update your codebase to the latest version. It outlines breaking changes and new features which may require updates to your application.
 
-## Type Checking
+### Type Checking
 
 Static type checking with `mypy` was added to improve code quality and catch errors earlier. If you plan contributing to the project please be aware of these changes:
 
 - Mypy validation is now part of CI and will check type correctness
 - Consider running `poe type-check` locally before submitting PRs
 
-## Agent Framework Changes
+### Agent Framework Changes
 
-### BaseAgent Generics
+#### BaseAgent Generics
 
 The `BaseAgent` class now uses generics for improved type safety. If you've created custom agents that extend `BaseAgent`, you'll need to update your class definitions to specify the appropriate types:
 
@@ -64,14 +64,14 @@ class MyCustomAgent(BaseAgent[MyCustomAgentRunOutput]):
 
 > **NOTE**: See a complete example here: https://github.com/i-am-bee/beeai-framework/blob/main/python/examples/agents/custom_agent.py
 
-### Agent Run and RunContext
+#### Agent Run and RunContext
 
 Agent `Run` and `RunContext` have been refactored. Take note of the changes and update that may be required:
 
 1. Check for changes in the RunContext API if you access it directly
 2. Review any custom agent implementations that override run-related methods
 
-### Tool Calling Agent
+#### Tool Calling Agent
 
 A new tool calling agent has been added. If you were calling tools, consider migrating to `ToolCallingAgent` which provides:
 
@@ -79,7 +79,7 @@ A new tool calling agent has been added. If you were calling tools, consider mig
 - Better integration with the framework
 - Improved error handling for tool operations
 
-## Run.on Event API
+### Run.on Event API
 
 The new `Run.on` API provides a simpler way to listen to emitted events:
 
@@ -104,9 +104,9 @@ resppnse = agent.run(...).on("*", print_events)
 
 This new API supplements the `Run.observe`. The `Run.observe` continues to be available and can be used, but you may consider migrating any existing event observers to use this more direct approach.
 
-## New Adapter Support
+### New Adapter Support
 
-### Anthropic Support
+#### Anthropic Support
 
 If you've been waiting for Anthropic model support, you can now use it in the Python framework:
 
@@ -121,7 +121,7 @@ async def anthropic_from_name() -> None:
     print(response.get_text_content())
 ```
 
-### Azure OpenAI Support
+#### Azure OpenAI Support
 
 Similarly, the Python framework now supports Azure OpenAI:
 
@@ -136,15 +136,15 @@ async def azure_openai_sync() -> None:
     print(response.get_text_content())
 ```
 
-## Emitter Changes
+### Emitter Changes
 
 The "match all nested" matcher (i.e., `*.*`) behavior has been fixed. If you were relying on this specific matching patterns, verify that your event handling still works as expected.
 
-## OpenMeteo Tool
+### OpenMeteo Tool
 
 If you're using the `OpenMeteo` tool, it now handles non-existing locations more gracefully. Please revisit any error handling around location lookups in your code.
 
-## Workflow Arguments
+### Workflow Arguments
 
 The workflow `add_agent()` method has been improved to accept keyword arguments.. Review any `workflow.add_agent(..)` you may be using to take advantage of these improvements:
 
