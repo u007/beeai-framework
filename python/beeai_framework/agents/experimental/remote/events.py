@@ -12,31 +12,30 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from typing import Generic, Literal
+from typing import Any
 
 from pydantic import BaseModel, InstanceOf
-from typing_extensions import TypeVar
 
 from beeai_framework.errors import FrameworkError
-from beeai_framework.workflows.types import WorkflowRun, WorkflowStepDefinition
-
-T = TypeVar("T", bound=BaseModel)
-K = TypeVar("K", default=str)
 
 
-class WorkflowStartEvent(BaseModel, Generic[T, K]):
-    run: WorkflowRun[T, K]
-    step: WorkflowStepDefinition[T, K]
+class RemoteAgentUpdateEvent(BaseModel):
+    key: str
+    value: dict[str, Any]
 
 
-class WorkflowSuccessEvent(BaseModel, Generic[T, K]):
-    run: WorkflowRun[T, K]
-    state: T
-    step: WorkflowStepDefinition[T, K]
-    next: K | Literal["__end__"]
-
-
-class WorkflowErrorEvent(BaseModel, Generic[T, K]):
-    run: WorkflowRun[T, K]
-    step: K | Literal["__end__"]
+class RemoteAgentErrorEvent(BaseModel):
+    message: str
     error: InstanceOf[FrameworkError]
+
+
+class RemoteAgentWarningEvent(BaseModel):
+    message: str
+    data: InstanceOf[Exception]
+
+
+remote_agent_event_types: dict[str, type] = {
+    "update": RemoteAgentUpdateEvent,
+    "error": RemoteAgentErrorEvent,
+    "warning": RemoteAgentWarningEvent,
+}
