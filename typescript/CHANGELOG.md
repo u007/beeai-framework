@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.11](https://github.com/i-am-bee/beeai-framework/compare/typescript_v0.1.10...typescript_v0.1.11) (2025-04-16)
+
+### Features
+
+- **agents:** improve performance of ToolCallingAgent ([#767](https://github.com/i-am-bee/beeai-framework/issues/767)) ([a2af271](https://github.com/i-am-bee/beeai-framework/commit/a2af271281ae9774ba9f0729c362637ffcc56a9f)), closes [#765](https://github.com/i-am-bee/beeai-framework/issues/765)
+- **backend:** allow passing custom system prompt to createStructure ([5a4c6d0](https://github.com/i-am-bee/beeai-framework/commit/5a4c6d04d4de3feb0e57ea0d6d50dfa110017bdb))
+- **backend:** handle tool_choice via structured decoding in non-supported environments ([#766](https://github.com/i-am-bee/beeai-framework/issues/766)) ([84fad9e](https://github.com/i-am-bee/beeai-framework/commit/84fad9e82984fa1ec8866227ed9c5cc053245b04)), closes [#764](https://github.com/i-am-bee/beeai-framework/issues/764)
+
 ## [0.1.10](https://github.com/i-am-bee/beeai-framework/compare/typescript_v0.1.9...typescript_v0.1.10) (2025-03-22)
 
 ### Bug Fixes
