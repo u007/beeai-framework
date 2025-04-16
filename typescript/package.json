@@ -89,7 +89,7 @@
         "[ \"$RELEASE_SKIP_DOCS_LINKS\" = \"true\" ] && echo 'Skipping docs links check.' || yarn docs:links:check",
         "yarn lint",
         "yarn ts:check",
-        "yarn test:all"
+        "[ \"$RELEASE_SKIP_TESTS\" = \"true\" ] && echo 'Skipping tests.' || yarn test:all"
       ],
       "after:bump": [
         "yarn build"
