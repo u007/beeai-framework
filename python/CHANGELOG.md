@@ -1,3 +1,14 @@
+## python_v0.1.16 (2025-04-16)
+
+### Bug Fixes
+
+- **adapters**: use text content for system messages to satisfy Groq (#768)
+- prevent type error when cloning ChatModel (#760)
+
+### Features
+
+- **tools**: Add OpenAPITool (#747)
+
 ## python_v0.1.15 (2025-04-14)
 
 ### Bug Fixes
