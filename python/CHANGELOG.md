@@ -1,3 +1,14 @@
+## python_v0.1.17 (2025-04-18)
+
+### Bug Fixes
+
+- context var storage cleanup (#775)
+- update event meta context type
+
+### Features
+
+- allow consuming Run instance as an async generator (#778)
+
 ## python_v0.1.16 (2025-04-16)
 
 ### Bug Fixes
