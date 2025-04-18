@@ -69,7 +69,7 @@ search = ["duckduckgo-search", "wikipedia-api"]
 duckduckgo = ["duckduckgo-search"]
 wikipedia = ["wikipedia-api"]
 mcp = ["mcp"]
-acp = ["acp"]
+acp = ["acp-sdk"]
 
 
 [tool.mypy]
