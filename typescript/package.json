@@ -13,7 +13,7 @@
     "Bee Agent Framework",
     "NodeJS Agent Framework"
   ],
-  "packageManager": "yarn@4.1.1",
+  "packageManager": "pnpm@4.1.1",
   "commitlint": {
     "extends": [
       "@commitlint/config-conventional"
@@ -47,7 +47,7 @@
     }
   },
   "lint-staged": {
-    "{src,tests,scripts}/**/*": "yarn copyright",
+    "{src,tests,scripts}/**/*": "pnpm copyright",
     "*": "prettier --ignore-unknown --write",
     "*.{ts,js}": "eslint --fix"
   },
@@ -79,24 +79,21 @@
         "--no-verify"
       ]
     },
-    "npm": {
-      "skipChecks": true,
-      "publish": true
-    },
+
     "hooks": {
       "before:init": [
-        "yarn docs:check",
-        "[ \"$RELEASE_SKIP_DOCS_LINKS\" = \"true\" ] && echo 'Skipping docs links check.' || yarn docs:links:check",
-        "yarn lint",
-        "yarn ts:check",
-        "[ \"$RELEASE_SKIP_TESTS\" = \"true\" ] && echo 'Skipping tests.' || yarn test:all"
+        "pnpm docs:check",
+        "[ \"$RELEASE_SKIP_DOCS_LINKS\" = \"true\" ] && echo 'Skipping docs links check.' || pnpm docs:links:check",
+        "pnpm lint",
+        "pnpm ts:check",
+        "[ \"$RELEASE_SKIP_TESTS\" = \"true\" ] && echo 'Skipping tests.' || pnpm test:all"
       ],
       "after:bump": [
-        "yarn build"
+        "pnpm build"
       ],
       "before:release": [
-        "yarn docs:build && git add . --update",
-        "yarn lint:fix && yarn format:fix && git add . --update"
+        "pnpm docs:build && git add . --update",
+        "pnpm lint:fix && pnpm format:fix && git add . --update"
       ]
     },
     "github": {
@@ -152,33 +149,33 @@
   },
   "scripts": {
     "clean": "rimraf dist",
-    "build": "yarn clean && yarn ts:check && NODE_OPTIONS='--max-old-space-size=8192' tsup",
+    "build": "pnpm clean && pnpm ts:check && NODE_OPTIONS='--max-old-space-size=8192' tsup",
     "ts:check": "tsc --noEmit && tsc -p tsconfig.examples.json --noEmit",
     "start": "tsx --tsconfig tsconfig.examples.json",
-    "start:bee": "yarn start -- examples/agents/bee.ts",
-    "docs:build": "embedme --source-root=. docs/**/*.md && yarn lint:fix docs/ && yarn prettier --write docs/",
+    "start:bee": "pnpm start -- examples/agents/bee.ts",
+    "docs:build": "embedme --source-root=. docs/**/*.md && pnpm lint:fix docs/ && pnpm prettier --write docs/",
     "docs:check": "embedme --source-root=. docs/**/*.md --verify",
     "docs:links": "linkinator . --timeout=10000 --retry --markdown --directory-listing --skip node_modules --skip CHANGELOG.md --skip docs/CHANGELOG.md --skip docs/_sidebar.md --skip \"https://ai.meta.com/blog/meta-llama-3-1/\" --include",
-    "docs:links:check": "yarn docs:links docs/**/*.md",
+    "docs:links:check": "pnpm docs:links docs/**/*.md",
     "docs:watch": "docsify serve ./docs --open",
-    "lint": "yarn eslint",
+    "lint": "pnpm eslint",
     "prepare": "../.githooks/install.sh",
-    "lint:fix": "yarn eslint --fix",
-    "format": "yarn prettier --check .",
-    "format:fix": "yarn prettier --write .",
+    "lint:fix": "pnpm eslint --fix",
+    "format": "pnpm prettier --check .",
+    "format:fix": "pnpm prettier --write .",
     "test:unit": "vitest run src",
     "test:unit:watch": "vitest run src",
     "test:e2e": "vitest run tests/e2e",
     "test:e2e:watch": "vitest watch tests/e2e",
-    "test:all": "yarn test:unit && yarn test:e2e && yarn test:examples",
+    "test:all": "pnpm test:unit && pnpm test:e2e && pnpm test:examples",
     "test:examples": "vitest --config ./examples/vitest.examples.config.ts run tests/examples",
     "test:examples:watch": "vitest --config ./examples/vitest.examples.config.ts watch tests/examples",
     "copyright": "./scripts/copyright.sh",
     "copyright:check": "TYPE=check ./scripts/copyright.sh",
     "release": "release-it",
     "_ensure_env": "cp -n .env.template .env || true",
-    "git:commit-msg": "yarn commitlint --edit --",
-    "git:pre-commit": "yarn copyright:check && yarn docs:check && yarn lint && yarn format && yarn ts:check && yarn run test:unit"
+    "git:commit-msg": "pnpm commitlint --edit --",
+    "git:pre-commit": "pnpm copyright:check && pnpm docs:check && pnpm lint && pnpm format && pnpm ts:check && pnpm run test:unit"
   },
   "dependencies": {
     "@ai-zen/node-fetch-event-source": "^2.1.4",
@@ -344,6 +341,7 @@
     "yaml": "^2.6.1"
   },
   "resolutions": {
+    "esbuild": "0.21.5",
     "zod": "^3.24.2"
   }
 }

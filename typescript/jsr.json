@@ -1,0 +1,11 @@
+{
+  "name": "@sentientedge/beeai-framework",
+  "version": "0.1.12",
+  "license": "Apache-2.0",
+  "description": "Mirror of BeeAI Framework - LLM Agent Framework",
+  "exports": "./src/index.js",
+  "types": "./src/index.ts",
+  "repository": "https://github.com/i-am-bee/beeai-framework",
+  "homepage": "https://github.com/i-am-bee/beeai-framework#readme",
+  "keywords": ["BeeAI Framework", "LLM Agent Framework", "Bee Agent Framework", "NodeJS Agent Framework"]
+}

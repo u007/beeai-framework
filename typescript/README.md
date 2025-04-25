@@ -39,13 +39,19 @@ Use these packages to extend the base BeeAI framework functionality:
 
 ## Installation
 
-Install the framework using npm:
+Install the framework using JSR (recommended):
+
+```shell
+jsr add beeai-framework
+```
+
+Or, if you prefer npm or yarn (legacy):
 
 ```shell
 npm install beeai-framework
 ```
 
-or yarn:
+or
 
 ```shell
 yarn add beeai-framework
