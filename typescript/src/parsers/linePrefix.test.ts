@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-import { LinePrefixParser, LinePrefixParserError } from "@/parsers/linePrefix.js";
+import { LinePrefixParser, LinePrefixParserError } from './linePrefix.js';
 import { z } from "zod";
-import { JSONParserField, ZodParserField } from "@/parsers/field.js";
-import { splitString } from "@/internals/helpers/string.js";
-import { ValueError } from "@/errors.js";
+import { JSONParserField, ZodParserField } from './field.js';
+import { splitString } from '../internals/helpers/string.js';
+import { ValueError } from '../errors.js';
 
 describe("LinePrefixParser", () => {
   it.each([1, 5, 20, 50, 100, 1000])("Handles arbitrary chunk size", async (chunkSize) => {

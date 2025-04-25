@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { CalculatorTool } from "@/tools/calculator.js";
+import { CalculatorTool } from './calculator.js';
 import { beforeEach, expect } from "vitest";
 
 describe("Calculator", () => {

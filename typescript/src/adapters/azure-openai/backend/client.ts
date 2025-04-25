@@ -15,8 +15,8 @@
  */
 
 import { AzureOpenAIProvider, AzureOpenAIProviderSettings, createAzure } from "@ai-sdk/azure";
-import { getEnv } from "@/internals/env.js";
-import { BackendClient } from "@/backend/client.js";
+import { getEnv } from '../../../internals/env.js';
+import { BackendClient } from '../../../backend/client.js';
 
 export type AzureOpenAIClientSettings = AzureOpenAIProviderSettings;
 

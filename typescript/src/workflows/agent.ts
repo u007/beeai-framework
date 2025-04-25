@@ -14,22 +14,22 @@
  * limitations under the License.
  */
 
-import { Workflow, WorkflowRunOptions } from "@/workflows/workflow.js";
-import { Message, UserMessage } from "@/backend/message.js";
-import { AnyTool } from "@/tools/base.js";
-import { BaseMemory, ReadOnlyMemory } from "@/memory/base.js";
+import { Workflow, WorkflowRunOptions } from './workflow.js';
+import { Message, UserMessage } from '../backend/message.js';
+import { AnyTool } from '../tools/base.js';
+import { BaseMemory, ReadOnlyMemory } from '../memory/base.js';
 import { z } from "zod";
-import { UnconstrainedMemory } from "@/memory/unconstrainedMemory.js";
-import { BaseAgent } from "@/agents/base.js";
+import { UnconstrainedMemory } from '../memory/unconstrainedMemory.js';
+import { BaseAgent } from '../agents/base.js';
 import { isFunction, randomString } from "remeda";
-import { ChatModel } from "@/backend/chat.js";
-import { ToolCallingAgent } from "@/agents/toolCalling/agent.js";
+import { ChatModel } from '../backend/chat.js';
+import { ToolCallingAgent } from '../agents/toolCalling/agent.js';
 import {
   ToolCallingAgentExecutionConfig,
   ToolCallingAgentRunInput,
   ToolCallingAgentRunOptions,
   ToolCallingAgentRunOutput,
-} from "@/agents/toolCalling/types.js";
+} from '../agents/toolCalling/types.js';
 
 type AgentInstance = BaseAgent<
   ToolCallingAgentRunInput,

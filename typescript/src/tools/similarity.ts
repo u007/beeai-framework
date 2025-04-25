@@ -23,9 +23,9 @@ import {
   ToolInput,
 } from "./base.js";
 import { string, z } from "zod";
-import { RunContext } from "@/context.js";
+import { RunContext } from '../context.js';
 import { filter, map, pipe, prop, sortBy, take } from "remeda";
-import { Emitter } from "@/emitter/emitter.js";
+import { Emitter } from '../emitter/emitter.js';
 
 const documentSchema = z.object({ text: string() }).passthrough();
 

@@ -20,10 +20,10 @@ import {
   ChatModelOutput,
   ChatModelInput,
   ChatModelParameters,
-} from "@/backend/chat.js";
-import { GetRunContext } from "@/context.js";
-import { Emitter } from "@/emitter/emitter.js";
-import { NotImplementedError } from "@/errors.js";
+} from '../../../backend/chat.js';
+import { GetRunContext } from '../../../context.js';
+import { Emitter } from '../../../emitter/emitter.js';
+import { NotImplementedError } from '../../../errors.js';
 
 export class DummyChatModel extends ChatModel {
   public readonly emitter = Emitter.root.child<ChatModelEvents>({

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { NullCache } from "@/cache/nullCache.js";
+import { NullCache } from './nullCache.js';
 import { verifyDeserialization } from "@tests/e2e/utils.js";
 
 describe("NullCache", () => {

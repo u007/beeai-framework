@@ -15,8 +15,8 @@
  */
 
 import { GoogleVertexClient, GoogleVertexClientSettings } from "./client.js";
-import { VercelEmbeddingModel } from "@/adapters/vercel/backend/embedding.js";
-import { getEnv } from "@/internals/env.js";
+import { VercelEmbeddingModel } from '../../vercel/backend/embedding.js';
+import { getEnv } from '../../../internals/env.js';
 import { GoogleVertexProvider } from "@ai-sdk/google-vertex";
 
 type GoogleVertexParameters = Parameters<GoogleVertexProvider["textEmbeddingModel"]>;

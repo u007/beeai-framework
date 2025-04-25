@@ -22,16 +22,16 @@ import {
   ToolEmitter,
   ToolError,
   ToolInput,
-} from "@/tools/base.js";
+} from './base.js';
 import { z } from "zod";
-import { GetRunContext } from "@/context.js";
-import { Emitter } from "@/emitter/emitter.js";
-import { PromptTemplate } from "@/template.js";
-import { getProp } from "@/internals/helpers/object.js";
-import type { BaseMemory } from "@/memory/base.js";
+import { GetRunContext } from '../context.js';
+import { Emitter } from '../emitter/emitter.js';
+import { PromptTemplate } from '../template.js';
+import { getProp } from '../internals/helpers/object.js';
+import type { BaseMemory } from '../memory/base.js';
 import { toCamelCase } from "remeda";
-import { Role, SystemMessage, UserMessage } from "@/backend/message.js";
-import { ChatModel } from "@/backend/chat.js";
+import { Role, SystemMessage, UserMessage } from '../backend/message.js';
+import { ChatModel } from '../backend/chat.js';
 
 export interface LLMToolInput extends BaseToolOptions {
   llm: ChatModel;

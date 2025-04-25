@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-import { ToolOutput } from "@/tools/base.js";
-import { PythonFile } from "@/tools/python/storage.js";
+import { ToolOutput } from '../base.js';
+import { PythonFile } from './storage.js';
 
 export class PythonToolOutput extends ToolOutput {
   static FILE_PREFIX = "urn:bee:file";

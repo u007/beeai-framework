@@ -15,12 +15,12 @@
  */
 
 import { GoogleVertexProvider } from "@ai-sdk/google-vertex";
-import { VercelChatModel } from "@/adapters/vercel/backend/chat.js";
+import { VercelChatModel } from '../../vercel/backend/chat.js';
 import {
   GoogleVertexClient,
   GoogleVertexClientSettings,
-} from "@/adapters/google-vertex/backend/client.js";
-import { getEnv } from "@/internals/env.js";
+} from './client.js';
+import { getEnv } from '../../../internals/env.js';
 
 type GoogleVertexParameters = Parameters<GoogleVertexProvider["languageModel"]>;
 export type GoogleVertexChatModelId = NonNullable<GoogleVertexParameters[0]>;

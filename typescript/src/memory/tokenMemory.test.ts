@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-import { TokenMemory } from "@/memory/tokenMemory.js";
-import { Message, UserMessage } from "@/backend/message.js";
+import { TokenMemory } from './tokenMemory.js';
+import { Message, UserMessage } from '../backend/message.js';
 import { verifyDeserialization } from "@tests/e2e/utils.js";
 import { sum } from "remeda";
 

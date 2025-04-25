@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-import { Serializable } from "@/internals/serializable.js";
-import type { ReActAgentTemplates } from "@/agents/react/types.js";
+import { Serializable } from '../../../internals/serializable.js';
+import type { ReActAgentTemplates } from '../types.js';
 import {
   ReActAgentRunIteration,
   ReActAgentCallbacks,
@@ -23,17 +23,17 @@ import {
   ReActAgentMeta,
   ReActAgentRunInput,
   ReActAgentRunOptions,
-} from "@/agents/react/types.js";
-import type { ReActAgent, ReActAgentInput } from "@/agents/react/agent.js";
-import { RetryCounter } from "@/internals/helpers/counter.js";
-import { AgentError } from "@/agents/base.js";
-import { shallowCopy } from "@/serializer/utils.js";
-import { BaseMemory } from "@/memory/base.js";
-import { GetRunContext } from "@/context.js";
-import { Emitter } from "@/emitter/emitter.js";
-import { Cache } from "@/cache/decoratorCache.js";
-import { mapObj } from "@/internals/helpers/object.js";
-import { PromptTemplate } from "@/template.js";
+} from '../types.js';
+import type { ReActAgent, ReActAgentInput } from '../agent.js';
+import { RetryCounter } from '../../../internals/helpers/counter.js';
+import { AgentError } from '../../base.js';
+import { shallowCopy } from '../../../serializer/utils.js';
+import { BaseMemory } from '../../../memory/base.js';
+import { GetRunContext } from '../../../context.js';
+import { Emitter } from '../../../emitter/emitter.js';
+import { Cache } from '../../../cache/decoratorCache.js';
+import { mapObj } from '../../../internals/helpers/object.js';
+import { PromptTemplate } from '../../../template.js';
 
 export interface ReActAgentRunnerLLMInput {
   meta: ReActAgentMeta;

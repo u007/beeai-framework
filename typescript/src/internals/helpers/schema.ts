@@ -18,8 +18,8 @@ import { TypeOf, ZodType, ZodEffects, ZodTypeAny, AnyZodObject, input } from "zo
 import { zodToJsonSchema, Options } from "zod-to-json-schema";
 import { Ajv, SchemaObject, ValidateFunction, Options as AjvOptions } from "ajv";
 import addFormats from "ajv-formats";
-import { findFirstPair } from "@/internals/helpers/string.js";
-import { FrameworkErrorOptions, ValueError } from "@/errors.js";
+import { findFirstPair } from './string.js';
+import { FrameworkErrorOptions, ValueError } from '../../errors.js';
 import { jsonrepair } from "jsonrepair";
 export type AnyToolSchemaLike = AnyZodObject | SchemaObject;
 export type AnySchemaLike = ZodTypeAny | SchemaObject;

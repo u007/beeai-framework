@@ -15,10 +15,10 @@
  */
 
 import { describe, it, expect, beforeEach, vi } from "vitest";
-import { ElasticSearchTool, ElasticSearchToolOptions } from "@/tools/database/elasticsearch.js";
+import { ElasticSearchTool, ElasticSearchToolOptions } from './elasticsearch.js';
 import { verifyDeserialization } from "@tests/e2e/utils.js";
-import { JSONToolOutput } from "@/tools/base.js";
-import { SlidingCache } from "@/cache/slidingCache.js";
+import { JSONToolOutput } from '../base.js';
+import { SlidingCache } from '../../cache/slidingCache.js';
 import { Task } from "promise-based-task";
 
 const mockClient = {

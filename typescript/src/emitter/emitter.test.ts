@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-import { Emitter } from "@/emitter/emitter.js";
+import { Emitter } from './emitter.js';
 import { describe, expect } from "vitest";
-import { EventMeta } from "@/emitter/types.js";
+import { EventMeta } from './types.js';
 
 describe("Emitter", () => {
   it("Emits", async () => {

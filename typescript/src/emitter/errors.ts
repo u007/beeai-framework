@@ -14,6 +14,6 @@
  * limitations under the License.
  */
 
-import { FrameworkError } from "@/errors.js";
+import { FrameworkError } from '../errors.js';
 
 export class EmitterError extends FrameworkError {}

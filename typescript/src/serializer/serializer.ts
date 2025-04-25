@@ -15,11 +15,11 @@
  */
 
 import * as R from "remeda";
-import { Serializable, SerializableClass } from "@/internals/serializable.js";
-import { AnyConstructable, ClassConstructor, NamedFunction } from "@/internals/types.js";
-import { SafeWeakMap, SafeWeakSet } from "@/internals/helpers/weakRef.js";
+import { Serializable, SerializableClass } from '../internals/serializable.js';
+import { AnyConstructable, ClassConstructor, NamedFunction } from '../internals/types.js';
+import { SafeWeakMap, SafeWeakSet } from '../internals/helpers/weakRef.js';
 import { deserializeError, serializeError } from "serialize-error-cjs";
-import { Version } from "@/version.js";
+import { Version } from '../version.js';
 import {
   extractClassName,
   getFunctionBinds,
@@ -35,17 +35,17 @@ import {
   toBoundedFunction,
   traverseObject,
   traverseWithUpdate,
-} from "@/serializer/utils.js";
+} from './utils.js';
 import { SlidingTaskMap, Task, TaskState } from "promise-based-task";
-import { getProp, setProp } from "@/internals/helpers/object.js";
-import { halveString } from "@/internals/helpers/string.js";
-import { traversePrototypeChain } from "@/internals/helpers/prototype.js";
-import { CacheFn } from "@/cache/decoratorCache.js";
-import { SerializerError } from "@/serializer/error.js";
+import { getProp, setProp } from '../internals/helpers/object.js';
+import { halveString } from '../internals/helpers/string.js';
+import { traversePrototypeChain } from '../internals/helpers/prototype.js';
+import { CacheFn } from '../cache/decoratorCache.js';
+import { SerializerError } from './error.js';
 import { ZodType } from "zod";
-import { toJsonSchema } from "@/internals/helpers/schema.js";
-import { createAbortController } from "@/internals/helpers/cancellation.js";
-import { hasMinLength } from "@/internals/helpers/array.js";
+import { toJsonSchema } from '../internals/helpers/schema.js';
+import { createAbortController } from '../internals/helpers/cancellation.js';
+import { hasMinLength } from '../internals/helpers/array.js';
 
 export interface SerializeFactory<A = unknown, B = unknown> {
   ref: ClassConstructor<A> | NamedFunction<A>;

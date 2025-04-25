@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { PromptTemplate } from "@/template.js";
+import { PromptTemplate } from '../../../template.js';
 import { z } from "zod";
 
 export const StreamlitAgentSystemPrompt = new PromptTemplate({

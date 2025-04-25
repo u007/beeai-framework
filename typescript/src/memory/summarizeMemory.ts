@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-import { AssistantMessage, Message, SystemMessage } from "@/backend/message.js";
-import { BaseMemory } from "@/memory/base.js";
-import { PromptTemplate } from "@/template.js";
-import { shallowCopy } from "@/serializer/utils.js";
+import { AssistantMessage, Message, SystemMessage } from '../backend/message.js';
+import { BaseMemory } from './base.js';
+import { PromptTemplate } from '../template.js';
+import { shallowCopy } from '../serializer/utils.js';
 import { z } from "zod";
-import { ChatModel } from "@/backend/chat.js";
+import { ChatModel } from '../backend/chat.js';
 
 export interface SummarizeMemoryInput {
   llm: ChatModel;

@@ -14,19 +14,19 @@
  * limitations under the License.
  */
 
-import { ToolEmitter, Tool, ToolInput } from "@/tools/base.js";
+import { ToolEmitter, Tool, ToolInput } from '../base.js';
 import { z } from "zod";
-import { Emitter } from "@/emitter/emitter.js";
-import { createURLParams } from "@/internals/fetcher.js";
-import { RunContext } from "@/context.js";
+import { Emitter } from '../../emitter/emitter.js';
+import { createURLParams } from '../../internals/fetcher.js';
+import { RunContext } from '../../context.js';
 import {
   SearchToolOptions,
   SearchToolOutput,
   SearchToolResult,
   SearchToolRunOptions,
-} from "@/tools/search/base.js";
+} from './base.js';
 import { ValidationError } from "ajv";
-import { parseEnv } from "@/internals/env.js";
+import { parseEnv } from '../../internals/env.js';
 
 export interface SearXNGToolOptions extends SearchToolOptions {
   baseUrl?: string;

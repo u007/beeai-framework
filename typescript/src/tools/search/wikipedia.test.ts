@@ -66,7 +66,7 @@ vitest.mock("wikipedia", () => {
 });
 
 import { verifyDeserialization } from "@tests/e2e/utils.js";
-import { WikipediaTool } from "@/tools/search/wikipedia.js";
+import { WikipediaTool } from './wikipedia.js';
 
 describe("Wikipedia", () => {
   it("Retrieves a correct page", async () => {

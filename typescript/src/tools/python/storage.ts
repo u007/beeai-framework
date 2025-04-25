@@ -20,9 +20,9 @@ import { pipeline } from "node:stream/promises";
 import fs, { createReadStream } from "node:fs";
 import { copyFile } from "node:fs/promises";
 import path from "node:path";
-import { Cache } from "@/cache/decoratorCache.js";
-import { Serializable } from "@/internals/serializable.js";
-import { shallowCopy } from "@/serializer/utils.js";
+import { Cache } from '../../cache/decoratorCache.js';
+import { Serializable } from '../../internals/serializable.js';
+import { shallowCopy } from '../../serializer/utils.js';
 
 export interface PythonFile {
   id: string;

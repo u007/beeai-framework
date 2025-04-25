@@ -24,16 +24,16 @@ import {
   ChatModelOutput,
   ChatModelParameters,
   ChatModelUsage,
-} from "@/backend/chat.js";
-import { RunContext } from "@/context.js";
-import { Emitter } from "@/emitter/emitter.js";
+} from '../../../backend/chat.js';
+import { RunContext } from '../../../context.js';
+import { Emitter } from '../../../emitter/emitter.js';
 import {
   BaseChatModel,
   BaseChatModelCallOptions,
 } from "@langchain/core/language_models/chat_models";
 import { AIMessageChunk, BaseMessageLike } from "@langchain/core/messages";
-import { AssistantMessage, Message } from "@/backend/message.js";
-import { ValueError } from "@/errors.js";
+import { AssistantMessage, Message } from '../../../backend/message.js';
+import { ValueError } from '../../../errors.js';
 
 export class LangChainChatModel extends ChatModel {
   public readonly emitter: ChatModelEmitter;

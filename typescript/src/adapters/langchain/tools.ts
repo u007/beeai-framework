@@ -22,17 +22,17 @@ import {
   Tool,
   ToolEvents,
   ToolInput,
-} from "@/tools/base.js";
-import type { GetRunContext } from "@/context.js";
+} from '../../tools/base.js';
+import type { GetRunContext } from '../../context.js';
 import type { RunnableConfig } from "@langchain/core/runnables";
 import { ZodEffects } from "zod";
 import * as LCTools from "@langchain/core/tools";
-import { Serializer } from "@/serializer/serializer.js";
+import { Serializer } from '../../serializer/serializer.js';
 import { isTruthy, pick, pickBy, toCamelCase } from "remeda";
-import { toJsonSchema } from "@/internals/helpers/schema.js";
-import { getProp } from "@/internals/helpers/object.js";
-import { ClassConstructor } from "@/internals/types.js";
-import { Emitter } from "@/emitter/emitter.js";
+import { toJsonSchema } from '../../internals/helpers/schema.js';
+import { getProp } from '../../internals/helpers/object.js';
+import { ClassConstructor } from '../../internals/types.js';
+import { Emitter } from '../../emitter/emitter.js';
 
 export type LangChainToolRunOptions = RunnableConfig & BaseToolRunOptions;
 export type LangChainToolOptions<TOutput = any> = BaseToolOptions & {

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { Serializable } from "@/internals/serializable.js";
+import { Serializable } from '../internals/serializable.js';
 
 export abstract class BaseCache<T> extends Serializable {
   public enabled = true;

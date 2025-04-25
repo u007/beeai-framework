@@ -15,8 +15,8 @@
  */
 
 import { z, ZodSchema } from "zod";
-import { FrameworkError } from "@/errors.js";
-import { getProp } from "@/internals/helpers/object.js";
+import { FrameworkError } from '../errors.js';
+import { getProp } from './helpers/object.js';
 
 export function getEnv(key: string, fallback?: never): string | undefined;
 export function getEnv(key: string, fallback: string): string;

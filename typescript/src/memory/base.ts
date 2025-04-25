@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-import { Message } from "@/backend/message.js";
-import { FrameworkError, FrameworkErrorOptions } from "@/errors.js";
-import { Serializable } from "@/internals/serializable.js";
+import { Message } from '../backend/message.js';
+import { FrameworkError, FrameworkErrorOptions } from '../errors.js';
+import { Serializable } from '../internals/serializable.js';
 
 export class MemoryError extends FrameworkError {}
 export class MemoryFatalError extends MemoryError {

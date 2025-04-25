@@ -14,18 +14,18 @@
  * limitations under the License.
  */
 
-import { Emitter } from "@/emitter/emitter.js";
+import { Emitter } from '../emitter/emitter.js';
 import { entries } from "remeda";
-import { ValueError } from "@/errors.js";
-import { Serializable } from "@/internals/serializable.js";
-import { shallowCopy } from "@/serializer/utils.js";
-import { Cache } from "@/cache/decoratorCache.js";
-import { ParserField } from "@/parsers/field.js";
-import { Callback, InferCallbackValue } from "@/emitter/types.js";
+import { ValueError } from '../errors.js';
+import { Serializable } from '../internals/serializable.js';
+import { shallowCopy } from '../serializer/utils.js';
+import { Cache } from '../cache/decoratorCache.js';
+import { ParserField } from './field.js';
+import { Callback, InferCallbackValue } from '../emitter/types.js';
 import { ZodError } from "zod";
-import { ValueOf } from "@/internals/types.js";
-import { LinePrefixParserError } from "@/parsers/errors.js";
-export * from "@/parsers/errors.js";
+import { ValueOf } from '../internals/types.js';
+import { LinePrefixParserError } from './errors.js';
+export * from './errors.js';
 
 export interface ParserNode<T extends string, P extends ParserField<any, any>> {
   prefix: string;

@@ -15,15 +15,15 @@
  */
 
 import { ZodSchema } from "zod";
-import { setProp } from "@/internals/helpers/object.js";
-import { ValueError } from "@/errors.js";
-import { Serializable } from "@/internals/serializable.js";
+import { setProp } from '../internals/helpers/object.js';
+import { ValueError } from '../errors.js';
+import { Serializable } from '../internals/serializable.js';
 import { JSONParser } from "@streamparser/json";
 import { jsonrepairTransform } from "jsonrepair/stream";
-import { Cache, SingletonCacheKeyFn } from "@/cache/decoratorCache.js";
-import { shallowCopy } from "@/serializer/utils.js";
-import { parseBrokenJson } from "@/internals/helpers/schema.js";
-import { findFirstPair } from "@/internals/helpers/string.js";
+import { Cache, SingletonCacheKeyFn } from '../cache/decoratorCache.js';
+import { shallowCopy } from '../serializer/utils.js';
+import { parseBrokenJson } from '../internals/helpers/schema.js';
+import { findFirstPair } from '../internals/helpers/string.js';
 
 export abstract class ParserField<T, TPartial> extends Serializable {
   public raw = "";

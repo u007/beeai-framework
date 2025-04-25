@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-import { BaseToolOptions, BaseToolRunOptions, ToolOutput } from "@/tools/base.js";
-import { Cache, WeakRefKeyFn } from "@/cache/decoratorCache.js";
+import { BaseToolOptions, BaseToolRunOptions, ToolOutput } from '../base.js';
+import { Cache, WeakRefKeyFn } from '../../cache/decoratorCache.js';
 import * as R from "remeda";
 
 export interface SearchToolOptions extends BaseToolOptions {}

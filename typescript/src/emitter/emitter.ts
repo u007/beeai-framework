@@ -23,15 +23,15 @@ import {
   Matcher,
   MatcherFn,
   StringKey,
-} from "@/emitter/types.js";
+} from './types.js';
 export type { EventMeta, EventTrace, Callback };
-import { Cache } from "@/cache/decoratorCache.js";
-import { createFullPath, isPath, assertValidName, assertValidNamespace } from "@/emitter/utils.js";
-import { EmitterError } from "@/emitter/errors.js";
-import { createRandomHash } from "@/internals/helpers/hash.js";
-import { shallowCopy, toBoundedFunction } from "@/serializer/utils.js";
-import { RequiredAll } from "@/internals/types.js";
-import { Serializable } from "@/internals/serializable.js";
+import { Cache } from '../cache/decoratorCache.js';
+import { createFullPath, isPath, assertValidName, assertValidNamespace } from './utils.js';
+import { EmitterError } from './errors.js';
+import { createRandomHash } from '../internals/helpers/hash.js';
+import { shallowCopy, toBoundedFunction } from '../serializer/utils.js';
+import { RequiredAll } from '../internals/types.js';
+import { Serializable } from '../internals/serializable.js';
 import { pick } from "remeda";
 
 export interface EmitterInput<E extends object = object> {

@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-import { VercelEmbeddingModel } from "@/adapters/vercel/backend/embedding.js";
+import { VercelEmbeddingModel } from '../../vercel/backend/embedding.js';
 import { AmazonBedrockProvider } from "@ai-sdk/amazon-bedrock";
-import { getEnv } from "@/internals/env.js";
+import { getEnv } from '../../../internals/env.js';
 import {
   AmazonBedrockClient,
   AmazonBedrockClientSettings,
-} from "@/adapters/amazon-bedrock/backend/client.js";
+} from './client.js';
 
 type Params = Parameters<AmazonBedrockProvider["embedding"]>;
 export type BedrockEmbeddingModelId = NonNullable<Params[0]>;

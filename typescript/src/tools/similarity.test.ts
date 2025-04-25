@@ -16,7 +16,7 @@
 
 import { beforeEach, expect, vi } from "vitest";
 
-import { Tool } from "@/tools/base.js";
+import { Tool } from './base.js';
 import { SimilarityTool, SimilarityToolOptions } from "./similarity.js";
 vi.mock("duck-duck-scrape");
 

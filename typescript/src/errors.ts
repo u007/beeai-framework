@@ -16,7 +16,7 @@
 
 import util from "util";
 import * as R from "remeda";
-import type { ObjectLike } from "@/internals/types.js";
+import type { ObjectLike } from './internals/types.js';
 
 export interface FrameworkErrorOptions {
   isFatal?: boolean;

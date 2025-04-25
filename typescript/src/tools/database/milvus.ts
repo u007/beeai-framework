@@ -23,9 +23,9 @@ import {
   JSONToolOutput,
   ToolInputValidationError,
   ToolEmitter,
-} from "@/tools/base.js";
-import { Cache } from "@/cache/decoratorCache.js";
-import { AnyToolSchemaLike } from "@/internals/helpers/schema.js";
+} from '../base.js';
+import { Cache } from '../../cache/decoratorCache.js';
+import { AnyToolSchemaLike } from '../../internals/helpers/schema.js';
 import {
   ClientConfig,
   MilvusClient,
@@ -34,7 +34,7 @@ import {
   DescribeCollectionResponse,
 } from "@zilliz/milvus2-sdk-node";
 import { z } from "zod";
-import { Emitter } from "@/emitter/emitter.js";
+import { Emitter } from '../../emitter/emitter.js';
 
 export interface MilvusToolOptions extends BaseToolOptions {
   connection: ClientConfig;

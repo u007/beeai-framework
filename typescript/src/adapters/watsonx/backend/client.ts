@@ -15,9 +15,9 @@
  */
 
 import { WatsonXAI } from "@ibm-cloud/watsonx-ai";
-import { getEnv } from "@/internals/env.js";
+import { getEnv } from '../../../internals/env.js';
 import { IamAuthenticator, UserOptions } from "ibm-cloud-sdk-core";
-import { BackendClient } from "@/backend/client.js";
+import { BackendClient } from '../../../backend/client.js';
 
 export interface WatsonxClientSettings extends Pick<UserOptions, "authenticator" | "version"> {
   spaceId?: string;

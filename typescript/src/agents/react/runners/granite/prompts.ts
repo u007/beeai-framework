@@ -22,7 +22,7 @@ import {
   ReActAgentToolInputErrorPrompt,
   ReActAgentToolNotFoundPrompt,
   ReActAgentUserPrompt,
-} from "@/agents/react/prompts.js";
+} from '../../prompts.js';
 
 export const GraniteReActAgentAssistantPrompt = ReActAgentAssistantPrompt.fork((config) => {
   config.template = `{{#thought}}Thought: {{.}}\n{{/thought}}{{#toolName}}Tool Name: {{.}}\n{{/toolName}}{{#toolInput}}Tool Input: {{.}}\n{{/toolInput}}{{#finalAnswer}}Final Answer: {{.}}{{/finalAnswer}}`;

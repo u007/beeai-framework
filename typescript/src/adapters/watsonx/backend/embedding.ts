@@ -14,16 +14,16 @@
  * limitations under the License.
  */
 
-import { WatsonxClient, WatsonxClientSettings } from "@/adapters/watsonx/backend/client.js";
+import { WatsonxClient, WatsonxClientSettings } from './client.js';
 import {
   EmbeddingModel,
   EmbeddingModelInput,
   EmbeddingModelOutput,
   EmbeddingModelEvents,
-} from "@/backend/embedding.js";
+} from '../../../backend/embedding.js';
 import { EmbeddingParameters as WXEmbeddingParameters } from "@ibm-cloud/watsonx-ai/dist/watsonx-ai-ml/vml_v1.js";
-import { Emitter } from "@/emitter/emitter.js";
-import { getEnv } from "@/internals/env.js";
+import { Emitter } from '../../../emitter/emitter.js';
+import { getEnv } from '../../../internals/env.js';
 
 export type WatsonxEmbeddingModelParameters = WXEmbeddingParameters;
 

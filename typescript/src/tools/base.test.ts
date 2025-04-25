@@ -24,16 +24,16 @@ import {
   Tool,
   ToolError,
   ToolInput,
-} from "@/tools/base.js";
-import { AnyFn } from "@/internals/types.js";
+} from './base.js';
+import { AnyFn } from '../internals/types.js';
 import { setTimeout } from "node:timers/promises";
 import { beforeEach, expect, vi } from "vitest";
 import { z } from "zod";
 
-import { SlidingCache } from "@/cache/slidingCache.js";
-import { Serializer } from "@/serializer/serializer.js";
+import { SlidingCache } from '../cache/slidingCache.js';
+import { Serializer } from '../serializer/serializer.js';
 import { verifyDeserialization } from "@tests/e2e/utils.js";
-import { Emitter } from "@/emitter/emitter.js";
+import { Emitter } from '../emitter/emitter.js';
 
 describe("Base Tool", () => {
   beforeEach(() => {

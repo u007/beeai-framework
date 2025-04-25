@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { Logger } from "@/logger/logger.js";
+import { Logger } from './logger.js';
 import { verifyDeserialization } from "@tests/e2e/utils.js";
 import pinoTest from "pino-test";
 import * as R from "remeda";

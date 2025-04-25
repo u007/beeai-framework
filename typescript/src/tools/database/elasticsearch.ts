@@ -23,15 +23,15 @@ import {
   JSONToolOutput,
   ToolInputValidationError,
   ToolEmitter,
-} from "@/tools/base.js";
-import { Cache } from "@/cache/decoratorCache.js";
-import { RunContext } from "@/context.js";
+} from '../base.js';
+import { Cache } from '../../cache/decoratorCache.js';
+import { RunContext } from '../../context.js';
 import { z } from "zod";
 import { ValidationError } from "ajv";
-import { AnyToolSchemaLike } from "@/internals/helpers/schema.js";
-import { parseBrokenJson } from "@/internals/helpers/schema.js";
+import { AnyToolSchemaLike } from '../../internals/helpers/schema.js';
+import { parseBrokenJson } from '../../internals/helpers/schema.js';
 import { Client, ClientOptions, estypes as ESTypes } from "@elastic/elasticsearch";
-import { Emitter } from "@/emitter/emitter.js";
+import { Emitter } from '../../emitter/emitter.js';
 
 export interface ElasticSearchToolOptions extends BaseToolOptions {
   connection: ClientOptions;

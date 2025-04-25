@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import type { Primitive } from "@/internals/helpers/guards.js";
+import type { Primitive } from './helpers/guards.js';
 type ExcludeArrayLike<T> = object & Exclude<T, any[]>;
 export type ObjectLike<K extends keyof any = string, V = any> = Record<K, V>;
 export type PlainObject<K extends string = string, V = Primitive> = Exclude<

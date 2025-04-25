@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-import { Serializable } from "@/internals/serializable.js";
-import { ChatModel } from "@/backend/chat.js";
-import { EmbeddingModel } from "@/backend/embedding.js";
-import { asyncProperties } from "@/internals/helpers/promise.js";
-import { FullModelName } from "@/backend/utils.js";
+import { Serializable } from '../internals/serializable.js';
+import { ChatModel } from './chat.js';
+import { EmbeddingModel } from './embedding.js';
+import { asyncProperties } from '../internals/helpers/promise.js';
+import { FullModelName } from './utils.js';
 import { ProviderName } from "./constants.js";
-import { OptionalExcept } from "@/internals/types.js";
+import { OptionalExcept } from '../internals/types.js';
 
 interface BackendModels {
   chat: ChatModel;

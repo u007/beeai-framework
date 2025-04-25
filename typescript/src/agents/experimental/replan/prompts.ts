@@ -15,10 +15,10 @@
  */
 
 import { z, ZodFirstPartyTypeKind, ZodObjectDef, ZodTypeDef } from "zod";
-import { PromptTemplate } from "@/template.js";
-import { AnyTool } from "@/tools/base.js";
+import { PromptTemplate } from '../../../template.js';
+import { AnyTool } from '../../../tools/base.js';
 import { hasAtLeast, map } from "remeda";
-import { toJsonSchema } from "@/internals/helpers/schema.js";
+import { toJsonSchema } from '../../../internals/helpers/schema.js';
 import { ignoreOverride, JsonSchema7Type } from "zod-to-json-schema";
 
 export async function createRePlanOutputSchema<T extends AnyTool>(tools: T[]) {

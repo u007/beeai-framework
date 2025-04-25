@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-import { VercelChatModel } from "@/adapters/vercel/backend/chat.js";
+import { VercelChatModel } from '../../vercel/backend/chat.js';
 import { OllamaProvider } from "ollama-ai-provider";
-import { OllamaClient, OllamaClientSettings } from "@/adapters/ollama/backend/client.js";
-import { getEnv } from "@/internals/env.js";
-import { ChatModelToolChoiceSupport } from "@/backend/chat.js";
+import { OllamaClient, OllamaClientSettings } from './client.js';
+import { getEnv } from '../../../internals/env.js';
+import { ChatModelToolChoiceSupport } from '../../../backend/chat.js';
 
 type OllamaParameters = Parameters<OllamaProvider["languageModel"]>;
 export type OllamaChatModelId = NonNullable<OllamaParameters[0]>;

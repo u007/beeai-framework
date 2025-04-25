@@ -19,12 +19,12 @@ import {
   EmbeddingModelInput,
   EmbeddingModelOutput,
   EmbeddingModelEvents,
-} from "@/backend/embedding.js";
+} from '../../../backend/embedding.js';
 import { embedMany, EmbeddingModel as Model } from "ai";
-import { Emitter } from "@/emitter/emitter.js";
-import { GetRunContext } from "@/context.js";
+import { Emitter } from '../../../emitter/emitter.js';
+import { GetRunContext } from '../../../context.js';
 import { toCamelCase } from "remeda";
-import { FullModelName } from "@/backend/utils.js";
+import { FullModelName } from '../../../backend/utils.js';
 
 type InternalEmbeddingModel = Model<string>;
 

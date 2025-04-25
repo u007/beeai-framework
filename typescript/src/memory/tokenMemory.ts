@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-import { BaseMemory, MemoryFatalError } from "@/memory/base.js";
+import { BaseMemory, MemoryFatalError } from './base.js';
 import * as R from "remeda";
-import { shallowCopy } from "@/serializer/utils.js";
-import { removeFromArray } from "@/internals/helpers/array.js";
+import { shallowCopy } from '../serializer/utils.js';
+import { removeFromArray } from '../internals/helpers/array.js';
 import { map, sum } from "remeda";
-import { ensureRange } from "@/internals/helpers/number.js";
-import { Message } from "@/backend/message.js";
+import { ensureRange } from '../internals/helpers/number.js';
+import { Message } from '../backend/message.js';
 
 export interface Handlers {
   estimate: (messages: Message) => number;

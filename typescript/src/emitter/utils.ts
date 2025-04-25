@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { EmitterError } from "@/emitter/errors.js";
+import { EmitterError } from './errors.js';
 
 export function assertValidNamespace(path: string[]) {
   if (!path || !Array.isArray(path)) {

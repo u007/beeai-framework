@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-import { BaseAgent } from "@/agents/base.js";
-import { AnyTool } from "@/tools/base.js";
-import { BaseMemory } from "@/memory/base.js";
-import { AssistantMessage, Message, UserMessage } from "@/backend/message.js";
-import { AgentMeta } from "@/agents/types.js";
-import { Emitter } from "@/emitter/emitter.js";
+import { BaseAgent } from '../base.js';
+import { AnyTool } from '../../tools/base.js';
+import { BaseMemory } from '../../memory/base.js';
+import { AssistantMessage, Message, UserMessage } from '../../backend/message.js';
+import { AgentMeta } from '../types.js';
+import { Emitter } from '../../emitter/emitter.js';
 import {
   ReActAgentExecutionConfig,
   ReActAgentTemplates,
@@ -27,16 +27,16 @@ import {
   ReActAgentRunInput,
   ReActAgentRunOptions,
   ReActAgentRunOutput,
-} from "@/agents/react/types.js";
-import { GetRunContext } from "@/context.js";
-import { assign } from "@/internals/helpers/object.js";
+} from './types.js';
+import { GetRunContext } from '../../context.js';
+import { assign } from '../../internals/helpers/object.js';
 import * as R from "remeda";
-import { BaseRunner } from "@/agents/react/runners/base.js";
-import { GraniteRunner } from "@/agents/react/runners/granite/runner.js";
-import { DeepThinkRunner } from "@/agents/react/runners/deep-think/runner.js";
-import { ValueError } from "@/errors.js";
-import { DefaultRunner } from "@/agents/react/runners/default/runner.js";
-import { ChatModel } from "@/backend/chat.js";
+import { BaseRunner } from './runners/base.js';
+import { GraniteRunner } from './runners/granite/runner.js';
+import { DeepThinkRunner } from './runners/deep-think/runner.js';
+import { ValueError } from '../../errors.js';
+import { DefaultRunner } from './runners/default/runner.js';
+import { ChatModel } from '../../backend/chat.js';
 
 export type ReActAgentTemplateFactory<K extends keyof ReActAgentTemplates> = (
   template: ReActAgentTemplates[K],

@@ -16,7 +16,7 @@
 
 import { expect } from "vitest";
 import { findFirstPair, splitString } from "./string.js";
-import { ValueError } from "@/errors.js";
+import { ValueError } from '../../errors.js';
 
 describe("String Utilities", () => {
   describe("splitString", () => {

@@ -17,9 +17,9 @@
 import {
   AmazonBedrockClient,
   AmazonBedrockClientSettings,
-} from "@/adapters/amazon-bedrock/backend/client.js";
-import { VercelChatModel } from "@/adapters/vercel/backend/chat.js";
-import { getEnv } from "@/internals/env.js";
+} from './client.js';
+import { VercelChatModel } from '../../vercel/backend/chat.js';
+import { getEnv } from '../../../internals/env.js';
 import { AmazonBedrockProvider } from "@ai-sdk/amazon-bedrock";
 
 type AmazonBedrockParameters = Parameters<AmazonBedrockProvider["languageModel"]>;

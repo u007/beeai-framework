@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-import { ValueError } from "@/errors.js";
-import { ClassConstructor } from "@/internals/types.js";
-import { BackendProviders, ProviderDef, ProviderName } from "@/backend/constants.js";
+import { ValueError } from '../errors.js';
+import { ClassConstructor } from '../internals/types.js';
+import { BackendProviders, ProviderDef, ProviderName } from './constants.js';
 import { capitalize, isEmpty } from "remeda";
-import { AnyTool, Tool } from "@/tools/base.js";
-import { ChatModelToolChoice } from "@/backend/chat.js";
-import { hasMinLength } from "@/internals/helpers/array.js";
+import { AnyTool, Tool } from '../tools/base.js';
+import { ChatModelToolChoice } from './chat.js';
+import { hasMinLength } from '../internals/helpers/array.js';
 import { z, ZodSchema } from "zod";
 
 export type FullModelName = `${ProviderName}:${string}`;

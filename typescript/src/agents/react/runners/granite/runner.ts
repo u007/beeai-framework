@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-import { ToolMessage } from "@/backend/message.js";
-import type { AnyTool } from "@/tools/base.js";
-import { DefaultRunner } from "@/agents/react/runners/default/runner.js";
-import type { ReActAgentParserInput, ReActAgentRunOptions } from "@/agents/react/types.js";
-import { ReActAgent, ReActAgentInput } from "@/agents/react/agent.js";
-import type { GetRunContext } from "@/context.js";
+import { ToolMessage } from '../../../../backend/message.js';
+import type { AnyTool } from '../../../../tools/base.js';
+import { DefaultRunner } from '../default/runner.js';
+import type { ReActAgentParserInput, ReActAgentRunOptions } from '../../types.js';
+import { ReActAgent, ReActAgentInput } from '../../agent.js';
+import type { GetRunContext } from '../../../../context.js';
 import {
   GraniteReActAgentAssistantPrompt,
   GraniteReActAgentSchemaErrorPrompt,
@@ -28,12 +28,12 @@ import {
   GraniteReActAgentToolInputErrorPrompt,
   GraniteReActAgentToolNotFoundPrompt,
   GraniteReActAgentUserPrompt,
-} from "@/agents/react/runners/granite/prompts.js";
+} from './prompts.js';
 import {
   ReActAgentToolNoResultsPrompt,
   ReActAgentUserEmptyPrompt,
-} from "@/agents/react/prompts.js";
-import { Cache } from "@/cache/decoratorCache.js";
+} from '../../prompts.js';
+import { Cache } from '../../../../cache/decoratorCache.js';
 
 export class GraniteRunner extends DefaultRunner {
   protected useNativeToolCalling = true;

@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-import { AnyFn, TypedFn } from "@/internals/types.js";
+import { AnyFn, TypedFn } from '../internals/types.js';
 import * as R from "remeda";
 import hash from "object-hash";
-import { createHash, createRandomHash } from "@/internals/helpers/hash.js";
-import { findDescriptor } from "@/internals/helpers/prototype.js";
+import { createHash, createRandomHash } from '../internals/helpers/hash.js';
+import { findDescriptor } from '../internals/helpers/prototype.js';
 
 type InputFn = AnyFn;
 type TargetFn = AnyFn;

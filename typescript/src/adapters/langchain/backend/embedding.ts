@@ -19,11 +19,11 @@ import {
   EmbeddingModelEvents,
   EmbeddingModelInput,
   EmbeddingModelOutput,
-} from "@/backend/embedding.js";
-import { RunContext } from "@/context.js";
-import { Emitter } from "@/emitter/emitter.js";
+} from '../../../backend/embedding.js';
+import { RunContext } from '../../../context.js';
+import { Emitter } from '../../../emitter/emitter.js';
 import { Embeddings as LCEmbeddingModel } from "@langchain/core/embeddings";
-import { signalRace } from "@/internals/helpers/promise.js";
+import { signalRace } from '../../../internals/helpers/promise.js';
 
 export class LangChainEmbeddingModel extends EmbeddingModel {
   public readonly emitter: Emitter<EmbeddingModelEvents>;

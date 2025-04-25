@@ -23,10 +23,10 @@ import {
   Tool,
   ToolError,
   ToolEmitter,
-} from "@/tools/base.js";
-import { Callback, Emitter } from "@/emitter/emitter.js";
-import { GetRunContext } from "@/context.js";
-import { ValueError } from "@/errors.js";
+} from './base.js';
+import { Callback, Emitter } from '../emitter/emitter.js';
+import { GetRunContext } from '../context.js';
+import { ValueError } from '../errors.js';
 import { SchemaObject } from "ajv";
 import { parse } from "yaml";
 import { isEmpty, isTruthy, clone, toCamelCase } from "remeda";

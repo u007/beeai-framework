@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { FrameworkError } from "@/errors.js";
+import { FrameworkError } from './errors.js';
 
 describe("FrameworkError", () => {
   it("Correctly sets all properties", () => {

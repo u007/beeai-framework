@@ -14,15 +14,15 @@
  * limitations under the License.
  */
 
-import { FrameworkError, ValueError } from "@/errors.js";
-import { ObjectLike, PlainObject } from "@/internals/types.js";
+import { FrameworkError, ValueError } from './errors.js';
+import { ObjectLike, PlainObject } from './internals/types.js';
 import { clone, identity, isPlainObject, pickBy } from "remeda";
 import Mustache from "mustache";
-import { Serializable } from "@/internals/serializable.js";
+import { Serializable } from './internals/serializable.js';
 import { z, ZodType } from "zod";
-import { createSchemaValidator, toJsonSchema } from "@/internals/helpers/schema.js";
+import { createSchemaValidator, toJsonSchema } from './internals/helpers/schema.js';
 import type { SchemaObject, ValidateFunction } from "ajv";
-import { getProp } from "@/internals/helpers/object.js";
+import { getProp } from './internals/helpers/object.js';
 
 type PostInfer<T> = T extends PlainObject
   ? {

@@ -20,8 +20,8 @@ import {
   JSONCacheKeyFn,
   ObjectHashKeyFn,
   CacheFn,
-} from "@/cache/decoratorCache.js";
-import type { AnyFn } from "@/internals/types.js";
+} from './decoratorCache.js';
+import type { AnyFn } from '../internals/types.js';
 
 describe("@Cache decorator", () => {
   it("Caches method", () => {

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { paginate, PaginateInput } from "@/internals/helpers/paginate.js";
+import { paginate, PaginateInput } from './paginate.js';
 
 describe("paginate", () => {
   const mockSetup = [

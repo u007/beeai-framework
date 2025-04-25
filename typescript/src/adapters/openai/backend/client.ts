@@ -15,9 +15,9 @@
  */
 
 import { createOpenAI, OpenAIProvider, OpenAIProviderSettings } from "@ai-sdk/openai";
-import { getEnv, parseEnv } from "@/internals/env.js";
+import { getEnv, parseEnv } from '../../../internals/env.js';
 import { z } from "zod";
-import { BackendClient } from "@/backend/client.js";
+import { BackendClient } from '../../../backend/client.js';
 
 export type OpenAIClientSettings = OpenAIProviderSettings;
 

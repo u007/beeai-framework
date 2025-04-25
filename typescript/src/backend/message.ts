@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-import { Serializable } from "@/internals/serializable.js";
-import { shallowCopy } from "@/serializer/utils.js";
+import { Serializable } from '../internals/serializable.js';
+import { shallowCopy } from '../serializer/utils.js';
 import { FilePart, ImagePart, TextPart, ToolCallPart, ToolResultPart } from "ai";
 import { z } from "zod";
-import { ValueError } from "@/errors.js";
+import { ValueError } from '../errors.js';
 
 export type MessageRole = "user" | "system" | "tool" | "assistant";
 export type MessageContentPart = TextPart | ToolCallPart | ImagePart | FilePart | ToolResultPart;

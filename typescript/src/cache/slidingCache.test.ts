@@ -15,7 +15,7 @@
  */
 
 import { verifyDeserialization } from "@tests/e2e/utils.js";
-import { SlidingCache } from "@/cache/slidingCache.js";
+import { SlidingCache } from './slidingCache.js';
 import { beforeEach } from "vitest";
 
 describe("SlidingCache", () => {

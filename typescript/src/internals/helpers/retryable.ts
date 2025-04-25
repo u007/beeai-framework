@@ -16,11 +16,11 @@
 
 import * as R from "remeda";
 import { Task, TaskState } from "promise-based-task";
-import { FrameworkError } from "@/errors.js";
-import { EnumValue } from "@/internals/types.js";
-import { asyncProperties } from "@/internals/helpers/promise.js";
-import { createRandomHash } from "@/internals/helpers/hash.js";
-import { pRetry } from "@/internals/helpers/retry.js";
+import { FrameworkError } from '../../errors.js';
+import { EnumValue } from '../types.js';
+import { asyncProperties } from './promise.js';
+import { createRandomHash } from './hash.js';
+import { pRetry } from './retry.js';
 
 export interface RetryableConfig {
   maxRetries: number;

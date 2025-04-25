@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-import { BaseCache } from "@/cache/base.js";
+import { BaseCache } from './base.js';
 import fs from "node:fs";
-import { SlidingCache } from "@/cache/slidingCache.js";
-import { Cache } from "@/cache/decoratorCache.js";
-import { Serializer } from "@/serializer/serializer.js";
-import { SerializableClass } from "@/internals/serializable.js";
+import { SlidingCache } from './slidingCache.js';
+import { Cache } from './decoratorCache.js';
+import { Serializer } from '../serializer/serializer.js';
+import { SerializableClass } from '../internals/serializable.js';
 
 interface Input {
   fullPath: string;

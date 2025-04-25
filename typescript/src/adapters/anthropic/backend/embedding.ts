@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-import { VercelEmbeddingModel } from "@/adapters/vercel/backend/embedding.js";
-import { getEnv } from "@/internals/env.js";
-import { AnthropicClient, AnthropicClientSettings } from "@/adapters/anthropic/backend/client.js";
+import { VercelEmbeddingModel } from '../../vercel/backend/embedding.js';
+import { getEnv } from '../../../internals/env.js';
+import { AnthropicClient, AnthropicClientSettings } from './client.js';
 import { AnthropicProvider } from "@ai-sdk/anthropic";
 
 type AnthropicParameters = Parameters<AnthropicProvider["textEmbeddingModel"]>;

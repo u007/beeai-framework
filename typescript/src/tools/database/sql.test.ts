@@ -15,8 +15,8 @@
  */
 
 import { beforeEach, expect, vi } from "vitest";
-import { SQLTool } from "@/tools/database/sql.js";
-import { getMetadata } from "@/tools/database/metadata.js";
+import { SQLTool } from './sql.js';
+import { getMetadata } from './metadata.js';
 import { Sequelize } from "sequelize";
 
 vi.mock("@/tools/database/metadata.js", () => ({

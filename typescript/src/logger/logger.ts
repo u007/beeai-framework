@@ -15,15 +15,15 @@
  */
 
 import { pino as pinoLogger, ChildLoggerOptions, LoggerOptions, DestinationStream } from "pino";
-import { FrameworkError } from "@/errors.js";
-import { Serializable } from "@/internals/serializable.js";
-import { Cache } from "@/cache/decoratorCache.js";
-import { EnumFromUnion, ValueOf } from "@/internals/types.js";
-import { parseEnv } from "@/internals/env.js";
+import { FrameworkError } from '../errors.js';
+import { Serializable } from '../internals/serializable.js';
+import { Cache } from '../cache/decoratorCache.js';
+import { EnumFromUnion, ValueOf } from '../internals/types.js';
+import { parseEnv } from '../internals/env.js';
 import { z } from "zod";
 import { isTruthy } from "remeda";
 import { PrettyOptions } from "pino-pretty";
-import { shallowCopy } from "@/serializer/utils.js";
+import { shallowCopy } from '../serializer/utils.js';
 import { stdout } from "node:process";
 import * as url from "node:url";
 import path from "node:path";

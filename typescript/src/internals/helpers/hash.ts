@@ -15,7 +15,7 @@
  */
 
 import { createHash as _createHash, randomBytes } from "node:crypto";
-import { NotImplementedError } from "@/errors.js";
+import { NotImplementedError } from '../../errors.js';
 
 export function createHash(input: string, length = 4) {
   if (length > 32) {

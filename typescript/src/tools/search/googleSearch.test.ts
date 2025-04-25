@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-import { GoogleSearchTool, GoogleSearchToolOutput } from "@/tools/search/googleSearch.js";
+import { GoogleSearchTool, GoogleSearchToolOutput } from './googleSearch.js';
 import { vi, describe, it, expect, beforeEach } from "vitest";
-import { SlidingCache } from "@/cache/slidingCache.js";
+import { SlidingCache } from '../../cache/slidingCache.js';
 import { verifyDeserialization } from "@tests/e2e/utils.js";
 import { Task } from "promise-based-task";
 

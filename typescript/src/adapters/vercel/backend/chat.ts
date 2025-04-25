@@ -21,7 +21,7 @@ import {
   ChatModelEvents,
   ChatModelObjectInput,
   ChatModelObjectOutput,
-} from "@/backend/chat.js";
+} from '../../../backend/chat.js';
 import {
   CoreAssistantMessage,
   CoreMessage,
@@ -35,21 +35,21 @@ import {
   ToolCallPart,
   ToolChoice,
 } from "ai";
-import { Emitter } from "@/emitter/emitter.js";
+import { Emitter } from '../../../emitter/emitter.js';
 import {
   AssistantMessage,
   Message,
   SystemMessage,
   ToolMessage,
   UserMessage,
-} from "@/backend/message.js";
-import { GetRunContext } from "@/context.js";
-import { ValueError } from "@/errors.js";
+} from '../../../backend/message.js';
+import { GetRunContext } from '../../../context.js';
+import { ValueError } from '../../../errors.js';
 import { isEmpty, mapToObj, toCamelCase } from "remeda";
-import { FullModelName } from "@/backend/utils.js";
-import { ChatModelError } from "@/backend/errors.js";
+import { FullModelName } from '../../../backend/utils.js';
+import { ChatModelError } from '../../../backend/errors.js';
 import { z, ZodArray, ZodEnum, ZodSchema } from "zod";
-import { Tool } from "@/tools/base.js";
+import { Tool } from '../../../tools/base.js';
 
 export abstract class VercelChatModel<
   M extends LanguageModelV1 = LanguageModelV1,

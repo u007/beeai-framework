@@ -15,8 +15,8 @@
  */
 
 import { setTimeout } from "node:timers/promises";
-import { signalRace } from "@/internals/helpers/promise.js";
-import { FrameworkError } from "@/errors.js";
+import { signalRace } from './promise.js';
+import { FrameworkError } from '../../errors.js';
 
 interface Meta {
   attempt: number;

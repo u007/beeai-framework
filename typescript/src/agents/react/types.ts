@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-import { BaseMemory } from "@/memory/base.js";
-import { Message } from "@/backend/message.js";
-import { Callback } from "@/emitter/types.js";
-import { AnyTool, BaseToolRunOptions, ToolError, ToolOutput } from "@/tools/base.js";
+import { BaseMemory } from '../../memory/base.js';
+import { Message } from '../../backend/message.js';
+import { Callback } from '../../emitter/types.js';
+import { AnyTool, BaseToolRunOptions, ToolError, ToolOutput } from '../../tools/base.js';
 import {
   ReActAgentAssistantPrompt,
   ReActAgentSchemaErrorPrompt,
@@ -28,11 +28,11 @@ import {
   ReActAgentToolNotFoundPrompt,
   ReActAgentUserEmptyPrompt,
   ReActAgentUserPrompt,
-} from "@/agents/react/prompts.js";
-import { LinePrefixParser } from "@/parsers/linePrefix.js";
-import { JSONParserField, ZodParserField } from "@/parsers/field.js";
-import { NonUndefined } from "@/internals/types.js";
-import { ChatModelOutput } from "@/backend/chat.js";
+} from './prompts.js';
+import { LinePrefixParser } from '../../parsers/linePrefix.js';
+import { JSONParserField, ZodParserField } from '../../parsers/field.js';
+import { NonUndefined } from '../../internals/types.js';
+import { ChatModelOutput } from '../../backend/chat.js';
 
 export interface ReActAgentRunInput {
   prompt: string | null;

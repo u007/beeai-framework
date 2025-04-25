@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-import { FrameworkError, FrameworkErrorOptions } from "@/errors.js";
-import { ValueOf } from "@/internals/types.js";
+import { FrameworkError, FrameworkErrorOptions } from '../errors.js';
+import { ValueOf } from '../internals/types.js';
 
 interface Context {
   lines: string;

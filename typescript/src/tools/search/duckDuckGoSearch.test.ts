@@ -18,14 +18,14 @@ import {
   DuckDuckGoSearchTool,
   DuckDuckGoSearchToolOptions,
   DuckDuckGoSearchToolOutput,
-} from "@/tools/search/duckDuckGoSearch.js";
+} from './duckDuckGoSearch.js';
 import { beforeEach, expect, vi } from "vitest";
 
 import * as ddg from "duck-duck-scrape";
-import { Tool } from "@/tools/base.js";
+import { Tool } from '../base.js';
 import { Task } from "promise-based-task";
 
-import { SlidingCache } from "@/cache/slidingCache.js";
+import { SlidingCache } from '../../cache/slidingCache.js';
 import { verifyDeserialization } from "@tests/e2e/utils.js";
 vi.mock("duck-duck-scrape");
 

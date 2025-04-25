@@ -15,8 +15,8 @@
  */
 
 import { SlidingTaskMap, Task } from "promise-based-task";
-import { BaseCache } from "@/cache/base.js";
-import { Serializable } from "@/internals/serializable.js";
+import { BaseCache } from './base.js';
+import { Serializable } from '../internals/serializable.js';
 
 export interface SlidingCacheInput {
   size: number;

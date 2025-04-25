@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-import { VercelChatModel } from "@/adapters/vercel/backend/chat.js";
+import { VercelChatModel } from '../../vercel/backend/chat.js';
 import type {
   AzureOpenAIProvider as VercelAzureOpenAIProvider,
   AzureOpenAIProviderSettings as VercelAzureOpenAIProviderSettings,
 } from "@ai-sdk/azure";
-import { AzureOpenAIClient } from "@/adapters/azure-openai/backend/client.js";
-import { getEnv } from "@/internals/env.js";
+import { AzureOpenAIClient } from './client.js';
+import { getEnv } from '../../../internals/env.js';
 
 type AzureOpenAIParameters = Parameters<VercelAzureOpenAIProvider["languageModel"]>;
 export type AzureOpenAIChatModelId = NonNullable<AzureOpenAIParameters[0]>;

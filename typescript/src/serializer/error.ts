@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { FrameworkError } from "@/errors.js";
+import { FrameworkError } from '../errors.js';
 
 export class SerializerError extends FrameworkError {
   constructor(message: string, errors?: Error[]) {

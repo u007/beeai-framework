@@ -15,16 +15,16 @@
  */
 
 import { AsyncLocalStorage } from "node:async_hooks";
-import { Emitter } from "@/emitter/emitter.js";
-import { createRandomHash } from "@/internals/helpers/hash.js";
+import { Emitter } from './emitter/emitter.js';
+import { createRandomHash } from './internals/helpers/hash.js';
 import { omit } from "remeda";
-import { Callback } from "@/emitter/types.js";
-import { registerSignals } from "@/internals/helpers/cancellation.js";
-import { Serializable } from "@/internals/serializable.js";
-import { executeSequentially, LazyPromise } from "@/internals/helpers/promise.js";
-import { FrameworkError } from "@/errors.js";
-import { shallowCopy } from "@/serializer/utils.js";
-import { isAsyncIterable } from "@/internals/helpers/stream.js";
+import { Callback } from './emitter/types.js';
+import { registerSignals } from './internals/helpers/cancellation.js';
+import { Serializable } from './internals/serializable.js';
+import { executeSequentially, LazyPromise } from './internals/helpers/promise.js';
+import { FrameworkError } from './errors.js';
+import { shallowCopy } from './serializer/utils.js';
+import { isAsyncIterable } from './internals/helpers/stream.js';
 
 export interface RunInstance<T = any> {
   emitter: Emitter<T>;

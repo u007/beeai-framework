@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { parseEnv } from "@/internals/env.js";
+import { parseEnv } from './env.js';
 import { z } from "zod";
 
 describe("Parsing ENV", () => {

@@ -14,15 +14,15 @@
  * limitations under the License.
  */
 
-import { GetRunContext } from "@/context.js";
-import { Emitter } from "@/emitter/emitter.js";
-import { NotImplementedError } from "@/errors.js";
+import { GetRunContext } from '../../../context.js';
+import { Emitter } from '../../../emitter/emitter.js';
+import { NotImplementedError } from '../../../errors.js';
 import {
   EmbeddingModel,
   EmbeddingModelEvents,
   EmbeddingModelInput,
   EmbeddingModelOutput,
-} from "@/backend/embedding.js";
+} from '../../../backend/embedding.js';
 
 export class DummyEmbeddingModel extends EmbeddingModel {
   public readonly emitter = Emitter.root.child<EmbeddingModelEvents>({

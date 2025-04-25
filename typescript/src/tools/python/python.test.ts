@@ -15,9 +15,9 @@
  */
 
 import { describe, it, expect } from "vitest";
-import { PythonTool } from "@/tools/python/python.js";
+import { PythonTool } from './python.js';
 import { verifyDeserialization } from "@tests/e2e/utils.js";
-import { LocalPythonStorage } from "@/tools/python/storage.js";
+import { LocalPythonStorage } from './storage.js';
 
 const codeInterpreterUrl = process.env.CODE_INTERPRETER_URL || "http://localhost:50081";
 

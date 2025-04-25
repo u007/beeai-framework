@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 
-import { FrameworkError } from "@/errors.js";
+import { FrameworkError } from '../errors.js';
 import * as R from "remeda";
-import { Retryable, RetryableConfig } from "@/internals/helpers/retryable.js";
-import { Serializable } from "@/internals/serializable.js";
+import { Retryable, RetryableConfig } from '../internals/helpers/retryable.js';
+import { Serializable } from '../internals/serializable.js';
 import { Task } from "promise-based-task";
-import { Cache, ObjectHashKeyFn, WeakRefKeyFn } from "@/cache/decoratorCache.js";
-import { BaseCache } from "@/cache/base.js";
-import { NullCache } from "@/cache/nullCache.js";
+import { Cache, ObjectHashKeyFn, WeakRefKeyFn } from '../cache/decoratorCache.js';
+import { BaseCache } from '../cache/base.js';
+import { NullCache } from '../cache/nullCache.js';
 import type { ErrorObject, ValidateFunction } from "ajv";
 import {
   AnyToolSchemaLike,
@@ -30,13 +30,13 @@ import {
   FromSchemaLikeRaw,
   toJsonSchema,
   validateSchema,
-} from "@/internals/helpers/schema.js";
-import { validate } from "@/internals/helpers/general.js";
+} from '../internals/helpers/schema.js';
+import { validate } from '../internals/helpers/general.js';
 import { z, ZodSchema } from "zod";
-import { Emitter } from "@/emitter/emitter.js";
-import { Callback } from "@/emitter/types.js";
-import { GetRunContext, RunContext } from "@/context.js";
-import { shallowCopy } from "@/serializer/utils.js";
+import { Emitter } from '../emitter/emitter.js';
+import { Callback } from '../emitter/types.js';
+import { GetRunContext, RunContext } from '../context.js';
+import { shallowCopy } from '../serializer/utils.js';
 import { toCamelCase } from "remeda";
 
 export class ToolError extends FrameworkError {}

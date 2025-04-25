@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-import { UnconstrainedMemory } from "@/memory/unconstrainedMemory.js";
-import { Message } from "@/backend/message.js";
+import { UnconstrainedMemory } from './unconstrainedMemory.js';
+import { Message } from '../backend/message.js';
 
 describe("Unconstrained Memory", () => {
   const date = new Date();

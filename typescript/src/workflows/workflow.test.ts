@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { Workflow } from "@/workflows/workflow.js";
+import { Workflow } from './workflow.js';
 import { z } from "zod";
 
 describe("Workflow", () => {

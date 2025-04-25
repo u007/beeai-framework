@@ -21,15 +21,15 @@ import {
   SearchToolResult,
   SearchToolRunOptions,
 } from "./base.js";
-import { ToolEmitter, Tool, ToolInput } from "@/tools/base.js";
+import { ToolEmitter, Tool, ToolInput } from '../base.js';
 import { z } from "zod";
-import { Cache } from "@/cache/decoratorCache.js";
-import { ValueError } from "@/errors.js";
-import { parseEnv } from "@/internals/env.js";
-import { RunContext } from "@/context.js";
-import { paginate } from "@/internals/helpers/paginate.js";
+import { Cache } from '../../cache/decoratorCache.js';
+import { ValueError } from '../../errors.js';
+import { parseEnv } from '../../internals/env.js';
+import { RunContext } from '../../context.js';
+import { paginate } from '../../internals/helpers/paginate.js';
 import { ValidationError } from "ajv";
-import { Emitter } from "@/emitter/emitter.js";
+import { Emitter } from '../../emitter/emitter.js';
 
 export interface GoogleSearchToolOptions extends SearchToolOptions {
   apiKey?: string;

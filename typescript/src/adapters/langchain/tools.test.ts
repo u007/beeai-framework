@@ -16,7 +16,7 @@
 
 import { tool as createTool } from "@langchain/core/tools";
 import { z } from "zod";
-import { LangChainTool } from "@/adapters/langchain/tools.js";
+import { LangChainTool } from './tools.js';
 import { verifyDeserialization } from "@tests/e2e/utils.js";
 
 describe("Langchain Tools", () => {

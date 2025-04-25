@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-import { Serializer } from "@/serializer/serializer.js";
-import { ClassConstructor } from "@/internals/types.js";
-import { extractClassName } from "@/serializer/utils.js";
-import { SerializerError } from "@/serializer/error.js";
-import { Cache } from "@/cache/decoratorCache.js";
+import { Serializer } from '../serializer/serializer.js';
+import { ClassConstructor } from './types.js';
+import { extractClassName } from '../serializer/utils.js';
+import { SerializerError } from '../serializer/error.js';
+import { Cache } from '../cache/decoratorCache.js';
 
 export type SerializableClass<T> = ClassConstructor<Serializable<T>> &
   Pick<typeof Serializable<T>, "fromSnapshot" | "fromSerialized">;

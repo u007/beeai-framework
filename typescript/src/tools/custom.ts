@@ -21,16 +21,16 @@ import {
   StringToolOutput,
   Tool,
   ToolInput,
-} from "@/tools/base.js";
-import { FrameworkError } from "@/errors.js";
+} from './base.js';
+import { FrameworkError } from '../errors.js';
 import { z } from "zod";
-import { validate } from "@/internals/helpers/general.js";
+import { validate } from '../internals/helpers/general.js';
 import { callCodeInterpreter, CodeInterpreterOptions } from "./python/python.js";
-import { RunContext } from "@/context.js";
-import { Emitter } from "@/emitter/emitter.js";
-import { ToolError } from "@/tools/base.js";
+import { RunContext } from '../context.js';
+import { Emitter } from '../emitter/emitter.js';
+import { ToolError } from './base.js';
 import { merge } from "remeda";
-import { omitUndefined } from "@/internals/helpers/object.js";
+import { omitUndefined } from '../internals/helpers/object.js';
 
 export class CustomToolCreateError extends FrameworkError {}
 export class CustomToolExecuteError extends FrameworkError {}

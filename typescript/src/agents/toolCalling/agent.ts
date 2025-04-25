@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-import { AgentError, BaseAgent } from "@/agents/base.js";
-import { AnyTool, DynamicTool, StringToolOutput, ToolError, ToolOutput } from "@/tools/base.js";
-import { BaseMemory } from "@/memory/base.js";
-import { AgentMeta } from "@/agents/types.js";
-import { Emitter } from "@/emitter/emitter.js";
+import { AgentError, BaseAgent } from '../base.js';
+import { AnyTool, DynamicTool, StringToolOutput, ToolError, ToolOutput } from '../../tools/base.js';
+import { BaseMemory } from '../../memory/base.js';
+import { AgentMeta } from '../types.js';
+import { Emitter } from '../../emitter/emitter.js';
 import type {
   ToolCallingAgentExecutionConfig,
   ToolCallingAgentTemplates,
@@ -27,21 +27,21 @@ import type {
   ToolCallingAgentRunOptions,
   ToolCallingAgentRunOutput,
   ToolCallingAgentRunState,
-} from "@/agents/toolCalling/types.js";
-import { GetRunContext } from "@/context.js";
-import { ChatModel } from "@/backend/chat.js";
-import { shallowCopy } from "@/serializer/utils.js";
-import { UnconstrainedMemory } from "@/memory/unconstrainedMemory.js";
-import { AssistantMessage, SystemMessage, ToolMessage, UserMessage } from "@/backend/message.js";
+} from './types.js';
+import { GetRunContext } from '../../context.js';
+import { ChatModel } from '../../backend/chat.js';
+import { shallowCopy } from '../../serializer/utils.js';
+import { UnconstrainedMemory } from '../../memory/unconstrainedMemory.js';
+import { AssistantMessage, SystemMessage, ToolMessage, UserMessage } from '../../backend/message.js';
 import { isEmpty, isString } from "remeda";
-import { RetryCounter } from "@/internals/helpers/counter.js";
-import { mapObj, omitUndefined } from "@/internals/helpers/object.js";
-import { Cache } from "@/cache/decoratorCache.js";
-import { PromptTemplate } from "@/template.js";
+import { RetryCounter } from '../../internals/helpers/counter.js';
+import { mapObj, omitUndefined } from '../../internals/helpers/object.js';
+import { Cache } from '../../cache/decoratorCache.js';
+import { PromptTemplate } from '../../template.js';
 import {
   ToolCallingAgentSystemPrompt,
   ToolCallingAgentTaskPrompt,
-} from "@/agents/toolCalling/prompts.js";
+} from './prompts.js';
 import { z, ZodSchema } from "zod";
 
 export type ToolCallingAgentTemplateFactory<K extends keyof ToolCallingAgentTemplates> = (

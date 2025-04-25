@@ -15,8 +15,8 @@
  */
 
 import { verifyDeserialization } from "@tests/e2e/utils.js";
-import { SlidingMemory } from "@/memory/slidingMemory.js";
-import { Message, UserMessage } from "@/backend/message.js";
+import { SlidingMemory } from './slidingMemory.js';
+import { Message, UserMessage } from '../backend/message.js';
 
 describe("Sliding Memory", () => {
   it("Removes old messages", async () => {

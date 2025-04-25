@@ -16,25 +16,25 @@
 
 import type { Page, pageFunctions, searchOptions } from "wikipedia";
 import wiki from "wikipedia";
-import { Cache } from "@/cache/decoratorCache.js";
+import { Cache } from '../../cache/decoratorCache.js';
 import * as R from "remeda";
 import { keys, mapValues } from "remeda";
-import { ArrayKeys, Common } from "@/internals/types.js";
+import { ArrayKeys, Common } from '../../internals/types.js';
 import {
   SearchToolOptions,
   SearchToolOutput,
   SearchToolResult,
   SearchToolRunOptions,
 } from "./base.js";
-import { asyncProperties } from "@/internals/helpers/promise.js";
+import { asyncProperties } from '../../internals/helpers/promise.js';
 import { z } from "zod";
-import { Tool, ToolEmitter, ToolInput } from "@/tools/base.js";
+import { Tool, ToolEmitter, ToolInput } from '../base.js';
 import Turndown from "turndown";
 // @ts-expect-error missing types
 import turndownPlugin from "joplin-turndown-plugin-gfm";
 import stringComparison from "string-comparison";
 import { pageResult } from "wikipedia/dist/resultTypes.js";
-import { Emitter } from "@/emitter/emitter.js";
+import { Emitter } from '../../emitter/emitter.js';
 
 wiki.default.setLang("en");
 

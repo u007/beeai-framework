@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-import { BaseMemory } from "@/memory/base.js";
-import { AssistantMessage } from "@/backend/message.js";
-import { Callback } from "@/emitter/types.js";
+import { BaseMemory } from '../../memory/base.js';
+import { AssistantMessage } from '../../backend/message.js';
+import { Callback } from '../../emitter/types.js';
 import {
   ToolCallingAgentSystemPrompt,
   ToolCallingAgentTaskPrompt,
-} from "@/agents/toolCalling/prompts.js";
+} from './prompts.js';
 import { ZodSchema } from "zod";
 
 export interface ToolCallingAgentRunInput {

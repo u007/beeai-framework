@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-import { FrameworkError } from "@/errors.js";
-import { Serializable } from "@/internals/serializable.js";
+import { FrameworkError } from '../../errors.js';
+import { Serializable } from '../serializable.js';
 
 export class RetryCounter extends Serializable {
   public remaining: number;

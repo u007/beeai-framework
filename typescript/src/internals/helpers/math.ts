@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { ValueError } from "@/errors.js";
+import { ValueError } from '../../errors.js';
 
 export function cosineSimilarity(vecA: number[], vecB: number[]): number {
   if (vecA.length !== vecB.length) {

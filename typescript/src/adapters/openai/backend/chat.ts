@@ -15,9 +15,9 @@
  */
 
 import { OpenAIProvider } from "@ai-sdk/openai";
-import { OpenAIClient, OpenAIClientSettings } from "@/adapters/openai/backend/client.js";
-import { VercelChatModel } from "@/adapters/vercel/backend/chat.js";
-import { getEnv } from "@/internals/env.js";
+import { OpenAIClient, OpenAIClientSettings } from './client.js';
+import { VercelChatModel } from '../../vercel/backend/chat.js';
+import { getEnv } from '../../../internals/env.js';
 
 type OpenAIParameters = Parameters<OpenAIProvider["chat"]>;
 export type OpenAIChatModelId = NonNullable<OpenAIParameters[0]>;

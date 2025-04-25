@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-import { VercelEmbeddingModel } from "@/adapters/vercel/backend/embedding.js";
-import { getEnv } from "@/internals/env.js";
-import { GroqClient, GroqClientSettings } from "@/adapters/groq/backend/client.js";
-import { ValueError } from "@/errors.js";
+import { VercelEmbeddingModel } from '../../vercel/backend/embedding.js';
+import { getEnv } from '../../../internals/env.js';
+import { GroqClient, GroqClientSettings } from './client.js';
+import { ValueError } from '../../../errors.js';
 import { GroqProvider } from "@ai-sdk/groq";
 
 type GroqParameters = Parameters<GroqProvider["textEmbeddingModel"]>;

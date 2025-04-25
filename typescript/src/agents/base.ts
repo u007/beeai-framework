@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-import { FrameworkError } from "@/errors.js";
-import { AgentMeta } from "@/agents/types.js";
-import { Serializable } from "@/internals/serializable.js";
-import { GetRunContext, RunContext } from "@/context.js";
-import { Emitter } from "@/emitter/emitter.js";
-import { BaseMemory } from "@/memory/base.js";
+import { FrameworkError } from '../errors.js';
+import { AgentMeta } from './types.js';
+import { Serializable } from '../internals/serializable.js';
+import { GetRunContext, RunContext } from '../context.js';
+import { Emitter } from '../emitter/emitter.js';
+import { BaseMemory } from '../memory/base.js';
 
 export class AgentError extends FrameworkError {}
 
@@ -40,7 +40,7 @@ export abstract class BaseAgent<
     ...[input, options]: Partial<TOptions> extends TOptions
       ? [input: TInput, options?: TOptions]
       : [input: TInput, options: TOptions]
-  ) {
+  ): ReturnType<typeof RunContext.enter> {
     if (this.isRunning) {
       throw new AgentError("Agent is already running!");
     }
@@ -87,7 +87,7 @@ export abstract class BaseAgent<
     };
   }
 
-  createSnapshot() {
+  createSnapshot(): { isRunning: boolean; emitter: Emitter<unknown> } {
     return { isRunning: false, emitter: this.emitter };
   }
 

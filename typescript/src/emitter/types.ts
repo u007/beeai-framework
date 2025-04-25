@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-import { AnyVoid } from "@/internals/types.js";
-import { Emitter } from "@/emitter/emitter.js";
+import { AnyVoid } from '../internals/types.js';
+import { Emitter } from './emitter.js';
 
 export type MatcherFn = (event: EventMeta) => boolean;
 export type Matcher = "*" | "*.*" | RegExp | MatcherFn;

@@ -21,12 +21,12 @@ import {
   JSONToolOutput,
   Tool,
   ToolInput,
-} from "@/tools/base.js";
+} from '../base.js';
 import { z } from "zod";
-import { Cache } from "@/cache/decoratorCache.js";
+import { Cache } from '../../cache/decoratorCache.js';
 import { stripHtml } from "string-strip-html";
-import { RunContext } from "@/context.js";
-import { Emitter } from "@/emitter/emitter.js";
+import { RunContext } from '../../context.js';
+import { Emitter } from '../../emitter/emitter.js';
 
 interface CrawlerOutput {
   url: string;

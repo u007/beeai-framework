@@ -15,7 +15,7 @@
  */
 
 import { describe, it, expect, beforeEach, vi } from "vitest";
-import { MilvusDatabaseTool, MilvusToolOptions, MilvusAction } from "@/tools/database/milvus.js";
+import { MilvusDatabaseTool, MilvusToolOptions, MilvusAction } from './milvus.js';
 
 const mockClient = {
   listCollections: vi.fn(),

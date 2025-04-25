@@ -23,18 +23,18 @@ import {
   ToolError,
   ToolInput,
   ToolInputValidationError,
-} from "@/tools/base.js";
+} from './base.js';
 import { z } from "zod";
-import { createURLParams } from "@/internals/fetcher.js";
-import { Cache } from "@/cache/decoratorCache.js";
+import { createURLParams } from '../internals/fetcher.js';
+import { Cache } from '../cache/decoratorCache.js';
 import { XMLParser } from "fast-xml-parser";
-import { getProp } from "@/internals/helpers/object.js";
+import { getProp } from '../internals/helpers/object.js';
 import { isDefined, isEmpty, pickBy } from "remeda";
-import { castArray } from "@/internals/helpers/array.js";
-import { ValueOf } from "@/internals/types.js";
-import { AnyToolSchemaLike } from "@/internals/helpers/schema.js";
-import { RunContext } from "@/context.js";
-import { Emitter } from "@/emitter/emitter.js";
+import { castArray } from '../internals/helpers/array.js';
+import { ValueOf } from '../internals/types.js';
+import { AnyToolSchemaLike } from '../internals/helpers/schema.js';
+import { RunContext } from '../context.js';
+import { Emitter } from '../emitter/emitter.js';
 
 type ToolOptions = BaseToolOptions;
 type ToolRunOptions = BaseToolRunOptions;

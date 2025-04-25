@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-import { JSONParserField, ZodParserField } from "@/parsers/field.js";
+import { JSONParserField, ZodParserField } from './field.js';
 import { z } from "zod";
-import { splitString } from "@/internals/helpers/string.js";
+import { splitString } from '../internals/helpers/string.js';
 
 describe("Parser Fields", () => {
   describe("JSON", () => {

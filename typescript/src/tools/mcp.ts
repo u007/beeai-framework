@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-import { BaseToolRunOptions, ToolEmitter, ToolInput, JSONToolOutput, Tool } from "@/tools/base.js";
-import { Emitter } from "@/emitter/emitter.js";
-import { GetRunContext } from "@/context.js";
+import { BaseToolRunOptions, ToolEmitter, ToolInput, JSONToolOutput, Tool } from './base.js';
+import { Emitter } from '../emitter/emitter.js';
+import { GetRunContext } from '../context.js';
 import { Client as MCPClient } from "@modelcontextprotocol/sdk/client/index.js";
 import { ListToolsResult } from "@modelcontextprotocol/sdk/types.js";
 import { SchemaObject } from "ajv";
-import { paginate } from "@/internals/helpers/paginate.js";
+import { paginate } from '../internals/helpers/paginate.js';
 
 export interface MCPToolInput {
   client: MCPClient;

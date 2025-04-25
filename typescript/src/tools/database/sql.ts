@@ -23,14 +23,14 @@ import {
   JSONToolOutput,
   ToolInputValidationError,
   ToolEmitter,
-} from "@/tools/base.js";
+} from '../base.js';
 import { z } from "zod";
 import { Sequelize, Options } from "sequelize";
-import { Provider, getMetadata } from "@/tools/database/metadata.js";
-import { Cache } from "@/cache/decoratorCache.js";
+import { Provider, getMetadata } from './metadata.js';
+import { Cache } from '../../cache/decoratorCache.js';
 import { ValidationError } from "ajv";
-import { AnyToolSchemaLike } from "@/internals/helpers/schema.js";
-import { Emitter } from "@/emitter/emitter.js";
+import { AnyToolSchemaLike } from '../../internals/helpers/schema.js';
+import { Emitter } from '../../emitter/emitter.js';
 
 interface ToolOptions extends BaseToolOptions {
   provider: Provider;

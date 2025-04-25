@@ -15,7 +15,7 @@
  */
 
 import * as R from "remeda";
-import { FrameworkError } from "@/errors.js";
+import { FrameworkError } from '../../errors.js';
 
 export type Override<T, T2 extends Partial<T>> = {
   [K in keyof T2]: K extends keyof T ? T2[K] : never;

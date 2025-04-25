@@ -15,7 +15,7 @@
  */
 
 import { setTimeout as pSetTimeout } from "node:timers/promises";
-import { Retryable, RunStrategy } from "@/internals/helpers/retryable.js";
+import { Retryable, RunStrategy } from './retryable.js';
 import { expect } from "vitest";
 
 describe("Retryable", () => {

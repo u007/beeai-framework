@@ -14,20 +14,20 @@
  * limitations under the License.
  */
 
-import { Callback } from "@/emitter/types.js";
-import { Emitter } from "@/emitter/emitter.js";
-import { AgentError, BaseAgent, BaseAgentRunOptions } from "@/agents/base.js";
-import { GetRunContext } from "@/context.js";
-import { AssistantMessage, Message, UserMessage } from "@/backend/message.js";
+import { Callback } from '../../../emitter/types.js';
+import { Emitter } from '../../../emitter/emitter.js';
+import { AgentError, BaseAgent, BaseAgentRunOptions } from '../../base.js';
+import { GetRunContext } from '../../../context.js';
+import { AssistantMessage, Message, UserMessage } from '../../../backend/message.js';
 import {
   createRePlanOutputSchema,
   RePlanState,
   RePlanAssistantPrompt,
-} from "@/agents/experimental/replan/prompts.js";
-import { BaseMemory } from "@/memory/base.js";
-import { UnconstrainedMemory } from "@/memory/unconstrainedMemory.js";
-import { AnyTool, Tool } from "@/tools/base.js";
-import { ChatModel } from "@/backend/chat.js";
+} from './prompts.js';
+import { BaseMemory } from '../../../memory/base.js';
+import { UnconstrainedMemory } from '../../../memory/unconstrainedMemory.js';
+import { AnyTool, Tool } from '../../../tools/base.js';
+import { ChatModel } from '../../../backend/chat.js';
 
 export interface RePlanRunInput {
   prompt: string | null;

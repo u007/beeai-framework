@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-import { VercelChatModel } from "@/adapters/vercel/backend/chat.js";
-import { GroqClient, GroqClientSettings } from "@/adapters/groq/backend/client.js";
-import { getEnv } from "@/internals/env.js";
+import { VercelChatModel } from '../../vercel/backend/chat.js';
+import { GroqClient, GroqClientSettings } from './client.js';
+import { getEnv } from '../../../internals/env.js';
 import { GroqProvider } from "@ai-sdk/groq";
 
 type GroqParameters = Parameters<GroqProvider["languageModel"]>;

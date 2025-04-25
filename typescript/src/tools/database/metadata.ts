@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { ToolError } from "@/tools/base.js";
+import { ToolError } from '../base.js';
 import { Sequelize } from "sequelize";
 
 export type Provider = "mysql" | "mariadb" | "postgres" | "mssql" | "db2" | "sqlite" | "oracle";

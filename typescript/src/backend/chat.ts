@@ -14,43 +14,43 @@
  * limitations under the License.
  */
 
-import { Serializable } from "@/internals/serializable.js";
-import { shallowCopy } from "@/serializer/utils.js";
-import { customMerge } from "@/internals/helpers/object.js";
-import { takeBigger } from "@/internals/helpers/number.js";
-import { Callback } from "@/emitter/types.js";
-import { FrameworkError } from "@/errors.js";
-import { Emitter } from "@/emitter/emitter.js";
-import { GetRunContext, RunContext } from "@/context.js";
+import { Serializable } from '../internals/serializable.js';
+import { shallowCopy } from '../serializer/utils.js';
+import { customMerge } from '../internals/helpers/object.js';
+import { takeBigger } from '../internals/helpers/number.js';
+import { Callback } from '../emitter/types.js';
+import { FrameworkError } from '../errors.js';
+import { Emitter } from '../emitter/emitter.js';
+import { GetRunContext, RunContext, Run } from '../context.js';
 import { isEmpty, isFunction, randomString } from "remeda";
-import { ObjectHashKeyFn } from "@/cache/decoratorCache.js";
+import { ObjectHashKeyFn } from '../cache/decoratorCache.js';
 import { Task } from "promise-based-task";
-import { NullCache } from "@/cache/nullCache.js";
-import { BaseCache } from "@/cache/base.js";
+import { NullCache } from '../cache/nullCache.js';
+import { BaseCache } from '../cache/base.js';
 import {
   filterToolsByToolChoice,
   FullModelName,
   generateToolUnionSchema,
   loadModel,
   parseModel,
-} from "@/backend/utils.js";
-import { ProviderName } from "@/backend/constants.js";
-import { AnyTool, Tool } from "@/tools/base.js";
-import { AssistantMessage, Message, SystemMessage, UserMessage } from "@/backend/message.js";
+} from './utils.js';
+import { ProviderName } from './constants.js';
+import { AnyTool, Tool } from '../tools/base.js';
+import { AssistantMessage, Message, SystemMessage, UserMessage } from './message.js';
 
-import { ChatModelError } from "@/backend/errors.js";
+import { ChatModelError } from './errors.js';
 import { z, ZodSchema, ZodType } from "zod";
 import {
   createSchemaValidator,
   parseBrokenJson,
   toJsonSchema,
-} from "@/internals/helpers/schema.js";
-import { Retryable } from "@/internals/helpers/retryable.js";
+} from '../internals/helpers/schema.js';
+import { Retryable } from '../internals/helpers/retryable.js';
 import { SchemaObject, ValidateFunction } from "ajv";
-import { PromptTemplate } from "@/template.js";
-import { toAsyncGenerator } from "@/internals/helpers/promise.js";
-import { Serializer } from "@/serializer/serializer.js";
-import { Logger } from "@/logger/logger.js";
+import { PromptTemplate } from '../template.js';
+import { toAsyncGenerator } from '../internals/helpers/promise.js';
+import { Serializer } from '../serializer/serializer.js';
+import { Logger } from '../logger/logger.js';
 
 export interface ChatModelParameters {
   maxTokens?: number;
@@ -151,7 +151,7 @@ export abstract class ChatModel extends Serializable {
   abstract get modelId(): string;
   abstract get providerId(): string;
 
-  create(input: ChatModelInput & { stream?: boolean }) {
+  create(input: ChatModelInput & { stream?: boolean }): Run<ChatModelOutput, this, [ChatModelInput & { stream?: boolean }]> {
     input = shallowCopy(input);
 
     return RunContext.enter(

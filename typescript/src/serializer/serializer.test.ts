@@ -14,16 +14,16 @@
  * limitations under the License.
  */
 
-import { Serializer } from "@/serializer/serializer.js";
+import { Serializer } from './serializer.js';
 import * as R from "remeda";
-import { FrameworkError } from "@/errors.js";
-import { AgentError } from "@/agents/base.js";
-import { Message, UserMessage } from "@/backend/message.js";
+import { FrameworkError } from '../errors.js';
+import { AgentError } from '../agents/base.js';
+import { Message, UserMessage } from '../backend/message.js';
 import { beforeEach, expect, vi } from "vitest";
 import { verifyDeserialization } from "@tests/e2e/utils.js";
-import { SerializerError } from "@/serializer/error.js";
-import { ValueOf } from "@/internals/types.js";
-import { toBoundedFunction } from "@/serializer/utils.js";
+import { SerializerError } from './error.js';
+import { ValueOf } from '../internals/types.js';
+import { toBoundedFunction } from './utils.js';
 
 describe("Serializer", () => {
   it.each([

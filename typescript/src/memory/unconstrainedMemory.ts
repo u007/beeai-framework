@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-import { BaseMemory } from "@/memory/base.js";
-import { shallowCopy } from "@/serializer/utils.js";
-import { removeFromArray } from "@/internals/helpers/array.js";
-import { ensureRange } from "@/internals/helpers/number.js";
-import { Message } from "@/backend/message.js";
+import { BaseMemory } from './base.js';
+import { shallowCopy } from '../serializer/utils.js';
+import { removeFromArray } from '../internals/helpers/array.js';
+import { ensureRange } from '../internals/helpers/number.js';
+import { Message } from '../backend/message.js';
 
 export class UnconstrainedMemory extends BaseMemory {
   public messages: Message[] = [];

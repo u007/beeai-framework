@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-import { getEnv } from "@/internals/env.js";
+import { getEnv } from '../../../internals/env.js';
 import {
   createVertex,
   GoogleVertexProvider,
   GoogleVertexProviderSettings,
 } from "@ai-sdk/google-vertex";
-import { BackendClient } from "@/backend/client.js";
+import { BackendClient } from '../../../backend/client.js';
 
 export type GoogleVertexClientSettings = GoogleVertexProviderSettings;
 

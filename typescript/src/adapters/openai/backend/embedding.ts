@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-import { OpenAIClient } from "@/adapters/openai/backend/client.js";
+import { OpenAIClient } from './client.js';
 import { OpenAIProvider, OpenAIProviderSettings } from "@ai-sdk/openai";
-import { VercelEmbeddingModel } from "@/adapters/vercel/backend/embedding.js";
-import { getEnv } from "@/internals/env.js";
+import { VercelEmbeddingModel } from '../../vercel/backend/embedding.js';
+import { getEnv } from '../../../internals/env.js';
 
 type OpenAIParameters = Parameters<OpenAIProvider["embedding"]>;
 export type OpenAIEmbeddingModelId = NonNullable<OpenAIParameters[0]>;

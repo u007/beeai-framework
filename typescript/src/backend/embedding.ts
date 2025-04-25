@@ -14,16 +14,16 @@
  * limitations under the License.
  */
 
-import { Serializable } from "@/internals/serializable.js";
-import { Callback } from "@/emitter/types.js";
-import { FrameworkError } from "@/errors.js";
-import { Emitter } from "@/emitter/emitter.js";
-import { shallowCopy } from "@/serializer/utils.js";
-import { GetRunContext, RunContext } from "@/context.js";
-import { pRetry } from "@/internals/helpers/retry.js";
-import { FullModelName, loadModel, parseModel } from "@/backend/utils.js";
-import { ProviderName } from "@/backend/constants.js";
-import { EmbeddingModelError } from "@/backend/errors.js";
+import { Serializable } from '../internals/serializable.js';
+import { Callback } from '../emitter/types.js';
+import { FrameworkError } from '../errors.js';
+import { Emitter } from '../emitter/emitter.js';
+import { shallowCopy } from '../serializer/utils.js';
+import { GetRunContext, RunContext } from '../context.js';
+import { pRetry } from '../internals/helpers/retry.js';
+import { FullModelName, loadModel, parseModel } from './utils.js';
+import { ProviderName } from './constants.js';
+import { EmbeddingModelError } from './errors.js';
 
 export interface EmbeddingModelInput {
   values: string[];

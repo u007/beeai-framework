@@ -15,8 +15,8 @@
  */
 
 import { createAnthropic, AnthropicProvider, AnthropicProviderSettings } from "@ai-sdk/anthropic";
-import { BackendClient } from "@/backend/client.js";
-import { getEnv, parseEnv } from "@/internals/env.js";
+import { BackendClient } from '../../../backend/client.js';
+import { getEnv, parseEnv } from '../../../internals/env.js';
 import { z } from "zod";
 
 export type AnthropicClientSettings = AnthropicProviderSettings;

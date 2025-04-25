@@ -15,9 +15,9 @@
  */
 
 import { OllamaProvider } from "ollama-ai-provider";
-import { OllamaClient, OllamaClientSettings } from "@/adapters/ollama/backend/client.js";
-import { VercelEmbeddingModel } from "@/adapters/vercel/backend/embedding.js";
-import { getEnv } from "@/internals/env.js";
+import { OllamaClient, OllamaClientSettings } from './client.js';
+import { VercelEmbeddingModel } from '../../vercel/backend/embedding.js';
+import { getEnv } from '../../../internals/env.js';
 
 type OllamaParameters = Parameters<OllamaProvider["textEmbeddingModel"]>;
 export type OllamaEmbeddingModelId = NonNullable<OllamaParameters[0]>;

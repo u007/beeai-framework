@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { PromptTemplateError, PromptTemplate, ValidationPromptTemplateError } from "@/template.js";
+import { PromptTemplateError, PromptTemplate, ValidationPromptTemplateError } from './template.js';
 import { z, ZodType } from "zod";
 
 describe("Prompt Template", () => {

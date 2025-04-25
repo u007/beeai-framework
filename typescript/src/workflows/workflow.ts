@@ -15,12 +15,12 @@
  */
 
 import { z, ZodSchema } from "zod";
-import { Serializable } from "@/internals/serializable.js";
-import { Callback, Emitter } from "@/emitter/emitter.js";
-import { RunContext } from "@/context.js";
+import { Serializable } from '../internals/serializable.js';
+import { Callback, Emitter } from '../emitter/emitter.js';
+import { RunContext } from '../context.js';
 import { omit, pick, toCamelCase } from "remeda";
-import { deepCopy, shallowCopy } from "@/serializer/utils.js";
-import { FrameworkError, ValueError } from "@/errors.js";
+import { deepCopy, shallowCopy } from '../serializer/utils.js';
+import { FrameworkError, ValueError } from '../errors.js';
 
 // eslint-disable-next-line @typescript-eslint/no-invalid-void-type
 type WorkflowStepHandlerReturn<K extends string> = K | ReservedStep | void;

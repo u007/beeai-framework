@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 
-import { DefaultRunner } from "@/agents/react/runners/default/runner.js";
-import { UnconstrainedMemory } from "@/memory/unconstrainedMemory.js";
-import { AssistantMessage, Role, UserMessage } from "@/backend/message.js";
-import { BaseMemory } from "@/memory/base.js";
-import { ReActAgentUserPrompt } from "@/agents/react/prompts.js";
+import { DefaultRunner } from './runner.js';
+import { UnconstrainedMemory } from '../../../../memory/unconstrainedMemory.js';
+import { AssistantMessage, Role, UserMessage } from '../../../../backend/message.js';
+import { BaseMemory } from '../../../../memory/base.js';
+import { ReActAgentUserPrompt } from '../../prompts.js';
 import { zip } from "remeda";
-import { RunContext } from "@/context.js";
-import { ReActAgent } from "@/agents/react/agent.js";
+import { RunContext } from '../../../../context.js';
+import { ReActAgent } from '../../agent.js';
 
 vi.mock("@/memory/tokenMemory.js", async () => {
   const { UnconstrainedMemory } = await import("@/memory/unconstrainedMemory.js");

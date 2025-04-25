@@ -15,8 +15,8 @@
  */
 
 import { createGroq, GroqProvider, GroqProviderSettings } from "@ai-sdk/groq";
-import { BackendClient } from "@/backend/client.js";
-import { getEnv } from "@/internals/env.js";
+import { BackendClient } from '../../../backend/client.js';
+import { getEnv } from '../../../internals/env.js';
 
 export type GroqClientSettings = GroqProviderSettings;
 

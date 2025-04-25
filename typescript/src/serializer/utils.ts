@@ -15,12 +15,12 @@
  */
 
 import * as R from "remeda";
-import { SafeWeakSet } from "@/internals/helpers/weakRef.js";
-import { AnyConstructable, AnyFn, ClassConstructor, NamedFunction } from "@/internals/types.js";
-import { SerializeFactory } from "@/serializer/serializer.js";
-import { getProp, hasProp, setProp } from "@/internals/helpers/object.js";
-import { isDirectInstanceOf } from "@/internals/helpers/prototype.js";
-import { SerializerError } from "@/serializer/error.js";
+import { SafeWeakSet } from '../internals/helpers/weakRef.js';
+import { AnyConstructable, AnyFn, ClassConstructor, NamedFunction } from '../internals/types.js';
+import { SerializeFactory } from './serializer.js';
+import { getProp, hasProp, setProp } from '../internals/helpers/object.js';
+import { isDirectInstanceOf } from '../internals/helpers/prototype.js';
+import { SerializerError } from './error.js';
 import { isFunction, isObjectType } from "remeda";
 
 export const SerializerSelfRefIdentifier = "__self_ref";

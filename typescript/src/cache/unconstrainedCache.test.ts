@@ -16,7 +16,7 @@
 
 import { verifyDeserialization } from "@tests/e2e/utils.js";
 import { beforeEach } from "vitest";
-import { UnconstrainedCache } from "@/cache/unconstrainedCache.js";
+import { UnconstrainedCache } from './unconstrainedCache.js';
 
 describe("UnconstrainedCache", () => {
   beforeEach(() => {

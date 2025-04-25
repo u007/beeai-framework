@@ -14,16 +14,16 @@
  * limitations under the License.
  */
 
-import { Callback } from "@/emitter/types.js";
-import { Emitter } from "@/emitter/emitter.js";
-import { AgentError, BaseAgent, BaseAgentRunOptions } from "@/agents/base.js";
-import { GetRunContext } from "@/context.js";
-import { AssistantMessage, Message } from "@/backend/message.js";
-import { BaseMemory } from "@/memory/base.js";
+import { Callback } from '../../../emitter/types.js';
+import { Emitter } from '../../../emitter/emitter.js';
+import { AgentError, BaseAgent, BaseAgentRunOptions } from '../../base.js';
+import { GetRunContext } from '../../../context.js';
+import { AssistantMessage, Message } from '../../../backend/message.js';
+import { BaseMemory } from '../../../memory/base.js';
 import { Client as MCPClient } from "@i-am-bee/acp-sdk/client/index.js";
 import { Transport } from "@i-am-bee/acp-sdk/shared/transport.js";
-import { shallowCopy } from "@/serializer/utils.js";
-import { NotImplementedError } from "@/errors.js";
+import { shallowCopy } from '../../../serializer/utils.js';
+import { NotImplementedError } from '../../../errors.js';
 import { AgentRunProgressNotificationSchema } from "@i-am-bee/acp-sdk/types.js";
 import { SSEClientTransport } from "@i-am-bee/acp-sdk/client/sse.js";
 

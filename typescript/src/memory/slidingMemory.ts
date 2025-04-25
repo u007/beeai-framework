@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-import { Message } from "@/backend/message.js";
-import { BaseMemory, MemoryFatalError } from "@/memory/base.js";
-import { shallowCopy } from "@/serializer/utils.js";
+import { Message } from '../backend/message.js';
+import { BaseMemory, MemoryFatalError } from './base.js';
+import { shallowCopy } from '../serializer/utils.js';
 import { filter, forEach, isTruthy, pipe } from "remeda";
-import { castArray, removeFromArray } from "@/internals/helpers/array.js";
-import { RequiredNested } from "@/internals/types.js";
-import { ensureRange } from "@/internals/helpers/number.js";
+import { castArray, removeFromArray } from '../internals/helpers/array.js';
+import { RequiredNested } from '../internals/types.js';
+import { ensureRange } from '../internals/helpers/number.js';
 
 export interface Handlers {
   removalSelector: (messages: Message[]) => Message | Message[];

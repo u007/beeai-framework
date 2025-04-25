@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-import { BaseAgent } from "@/agents/base.js";
-import { OmitEmpty } from "@/internals/types.js";
-import { AnyTool } from "@/tools/base.js";
+import { BaseAgent } from './base.js';
+import { OmitEmpty } from '../internals/types.js';
+import { AnyTool } from '../tools/base.js';
 
 export interface AgentMeta {
   name: string;

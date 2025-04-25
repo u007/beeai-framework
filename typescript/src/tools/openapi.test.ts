@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { OpenAPITool } from "@/tools/openapi.js";
+import { OpenAPITool } from './openapi.js';
 import { verifyDeserialization } from "@tests/e2e/utils.js";
 
 const openApiSchema =

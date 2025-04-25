@@ -14,18 +14,18 @@
  * limitations under the License.
  */
 
-import { FrameworkError } from "@/errors.js";
-import { Serializable } from "@/internals/serializable.js";
+import { FrameworkError } from '../errors.js';
+import { Serializable } from './serializable.js';
 import {
   EventSourceMessage,
   EventStreamContentType,
   fetchEventSource,
 } from "@ai-zen/node-fetch-event-source";
 import { FetchEventSourceInit } from "@ai-zen/node-fetch-event-source/lib/cjs/fetch.js";
-import { emitterToGenerator } from "@/internals/helpers/promise.js";
+import { emitterToGenerator } from './helpers/promise.js';
 import { doNothing, isPlainObject } from "remeda";
-import { Callback, Emitter } from "@/emitter/emitter.js";
-import { shallowCopy } from "@/serializer/utils.js";
+import { Callback, Emitter } from '../emitter/emitter.js';
+import { shallowCopy } from '../serializer/utils.js';
 
 export class RestfulClientError extends FrameworkError {}
 

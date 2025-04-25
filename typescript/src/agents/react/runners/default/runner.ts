@@ -18,14 +18,14 @@ import {
   BaseRunner,
   ReActAgentRunnerLLMInput,
   ReActAgentRunnerToolInput,
-} from "@/agents/react/runners/base.js";
+} from '../base.js';
 import type {
   ReActAgentRunIteration,
   ReActAgentParserInput,
   ReActAgentRunInput,
-} from "@/agents/react/types.js";
-import { Retryable } from "@/internals/helpers/retryable.js";
-import { AgentError } from "@/agents/base.js";
+} from '../../types.js';
+import { Retryable } from '../../../../internals/helpers/retryable.js';
+import { AgentError } from '../../../base.js';
 import {
   ReActAgentAssistantPrompt,
   ReActAgentSchemaErrorPrompt,
@@ -36,19 +36,19 @@ import {
   ReActAgentToolNotFoundPrompt,
   ReActAgentUserEmptyPrompt,
   ReActAgentUserPrompt,
-} from "@/agents/react/prompts.js";
-import { AnyTool, Tool, ToolError, ToolInputValidationError, ToolOutput } from "@/tools/base.js";
-import { FrameworkError } from "@/errors.js";
+} from '../../prompts.js';
+import { AnyTool, Tool, ToolError, ToolInputValidationError, ToolOutput } from '../../../../tools/base.js';
+import { FrameworkError } from '../../../../errors.js';
 import { isTruthy, last } from "remeda";
-import { LinePrefixParser, LinePrefixParserError } from "@/parsers/linePrefix.js";
-import { JSONParserField, ZodParserField } from "@/parsers/field.js";
+import { LinePrefixParser, LinePrefixParserError } from '../../../../parsers/linePrefix.js';
+import { JSONParserField, ZodParserField } from '../../../../parsers/field.js';
 import { z } from "zod";
-import { AssistantMessage, Role, SystemMessage, UserMessage } from "@/backend/message.js";
-import { TokenMemory } from "@/memory/tokenMemory.js";
-import { getProp } from "@/internals/helpers/object.js";
-import { BaseMemory } from "@/memory/base.js";
-import { Cache } from "@/cache/decoratorCache.js";
-import { shallowCopy } from "@/serializer/utils.js";
+import { AssistantMessage, Role, SystemMessage, UserMessage } from '../../../../backend/message.js';
+import { TokenMemory } from '../../../../memory/tokenMemory.js';
+import { getProp } from '../../../../internals/helpers/object.js';
+import { BaseMemory } from '../../../../memory/base.js';
+import { Cache } from '../../../../cache/decoratorCache.js';
+import { shallowCopy } from '../../../../serializer/utils.js';
 
 export class DefaultRunner extends BaseRunner {
   protected useNativeToolCalling = false;

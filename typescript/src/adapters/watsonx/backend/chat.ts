@@ -22,8 +22,8 @@ import {
   ChatModelOutput,
   ChatModelParameters,
   ChatModelToolChoiceSupport,
-} from "@/backend/chat.js";
-import { WatsonxClient, WatsonxClientSettings } from "@/adapters/watsonx/backend/client.js";
+} from '../../../backend/chat.js';
+import { WatsonxClient, WatsonxClientSettings } from './client.js';
 import { findLast, isEmpty, isTruthy } from "remeda";
 import WatsonxAiMlVml_v1, {
   TextChatMessages,
@@ -32,16 +32,16 @@ import WatsonxAiMlVml_v1, {
   TextChatResultChoice,
   TextChatUsage,
 } from "@ibm-cloud/watsonx-ai/dist/watsonx-ai-ml/vml_v1.js";
-import { shallowCopy } from "@/serializer/utils.js";
-import { Emitter } from "@/emitter/emitter.js";
-import { GetRunContext } from "@/context.js";
-import { AssistantMessage, Message, SystemMessage, ToolMessage } from "@/backend/message.js";
+import { shallowCopy } from '../../../serializer/utils.js';
+import { Emitter } from '../../../emitter/emitter.js';
+import { GetRunContext } from '../../../context.js';
+import { AssistantMessage, Message, SystemMessage, ToolMessage } from '../../../backend/message.js';
 import { ToolCallPart } from "ai";
 import Type = WatsonxAiMlVml_v1.TextChatResponseFormat.Constants.Type;
-import { parseBrokenJson } from "@/internals/helpers/schema.js";
-import { getEnv } from "@/internals/env.js";
-import { NotImplementedError } from "@/errors.js";
-import { Tool } from "@/tools/base.js";
+import { parseBrokenJson } from '../../../internals/helpers/schema.js';
+import { getEnv } from '../../../internals/env.js';
+import { NotImplementedError } from '../../../errors.js';
+import { Tool } from '../../../tools/base.js';
 
 export class WatsonxChatModel extends ChatModel {
   protected readonly client: WatsonxClient;

@@ -21,20 +21,20 @@ import {
   Tool,
   ToolError,
   ToolInput,
-} from "@/tools/base.js";
+} from '../base.js';
 import { z } from "zod";
-import { PromptTemplate } from "@/template.js";
+import { PromptTemplate } from '../../template.js';
 import { filter, isIncludedIn, map, pipe, unique, uniqueBy } from "remeda";
-import { PythonFile, PythonStorage } from "@/tools/python/storage.js";
-import { PythonToolOutput } from "@/tools/python/output.js";
+import { PythonFile, PythonStorage } from './storage.js';
+import { PythonToolOutput } from './output.js';
 import { ValidationError } from "ajv";
 import { ConnectionOptions } from "node:tls";
-import { RunContext } from "@/context.js";
-import { hasMinLength } from "@/internals/helpers/array.js";
-import { Emitter } from "@/emitter/emitter.js";
-import { shallowCopy } from "@/serializer/utils.js";
-import { ChatModel } from "@/backend/chat.js";
-import { UserMessage } from "@/backend/message.js";
+import { RunContext } from '../../context.js';
+import { hasMinLength } from '../../internals/helpers/array.js';
+import { Emitter } from '../../emitter/emitter.js';
+import { shallowCopy } from '../../serializer/utils.js';
+import { ChatModel } from '../../backend/chat.js';
+import { UserMessage } from '../../backend/message.js';
 
 export interface CodeInterpreterOptions {
   url: string;

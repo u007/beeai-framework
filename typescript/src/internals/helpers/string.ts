@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-import { ValueOf } from "@/internals/types.js";
+import { ValueOf } from '../types.js';
 import * as R from "remeda";
-import { ValueError } from "@/errors.js";
+import { ValueError } from '../../errors.js';
 import { isString, unique } from "remeda";
 
 export function* splitString(

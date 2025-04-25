@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-import { PromptTemplate } from "@/template.js";
+import { PromptTemplate } from '../../template.js';
 import { z } from "zod";
-import { MessageMeta } from "@/backend/message.js";
+import { MessageMeta } from '../../backend/message.js';
 
 export const ReActAgentSystemPrompt = new PromptTemplate({
   schema: z.object({

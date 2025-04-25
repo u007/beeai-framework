@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-import type { AnyTool } from "@/tools/base.js";
-import { DefaultRunner } from "@/agents/react/runners/default/runner.js";
+import type { AnyTool } from '../../../../tools/base.js';
+import { DefaultRunner } from '../default/runner.js';
 import {
   DeepThinkReActAgentAssistantPrompt,
   DeepThinkReActAgentSchemaErrorPrompt,
@@ -24,18 +24,18 @@ import {
   DeepThinkReActAgentToolInputErrorPrompt,
   DeepThinkReActAgentToolNotFoundPrompt,
   DeepThinkReActAgentUserPrompt,
-} from "@/agents/react/runners/deep-think/prompts.js";
+} from './prompts.js';
 import {
   ReActAgentToolNoResultsPrompt,
   ReActAgentUserEmptyPrompt,
-} from "@/agents/react/prompts.js";
-import { Cache } from "@/cache/decoratorCache.js";
-import { ZodParserField } from "@/parsers/field.js";
+} from '../../prompts.js';
+import { Cache } from '../../../../cache/decoratorCache.js';
+import { ZodParserField } from '../../../../parsers/field.js';
 import { z } from "zod";
-import { ReActAgentInput, ReActAgent } from "@/agents/react/agent.js";
-import { ReActAgentRunOptions } from "@/agents/react/types.js";
-import { GetRunContext } from "@/context.js";
-import { UserMessage } from "@/backend/message.js";
+import { ReActAgentInput, ReActAgent } from '../../agent.js';
+import { ReActAgentRunOptions } from '../../types.js';
+import { GetRunContext } from '../../../../context.js';
+import { UserMessage } from '../../../../backend/message.js';
 
 export class DeepThinkRunner extends DefaultRunner {
   @Cache({ enumerable: false })

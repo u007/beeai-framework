@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-import { VercelEmbeddingModel } from "@/adapters/vercel/backend/embedding.js";
+import { VercelEmbeddingModel } from '../../vercel/backend/embedding.js';
 import {
   AzureOpenAIClient,
   AzureOpenAIClientSettings,
-} from "@/adapters/azure-openai/backend/client.js";
-import { getEnv } from "@/internals/env.js";
+} from './client.js';
+import { getEnv } from '../../../internals/env.js';
 import { AzureOpenAIProvider as VercelAzureOpenAIProviderSettings } from "@ai-sdk/azure";
 
 type AzureOpenAIParameters = Parameters<VercelAzureOpenAIProviderSettings["textEmbeddingModel"]>;

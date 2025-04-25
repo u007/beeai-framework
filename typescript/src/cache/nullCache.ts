@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { BaseCache } from "@/cache/base.js";
+import { BaseCache } from './base.js';
 
 export class NullCache<T> extends BaseCache<T> {
   enabled = false;

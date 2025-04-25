@@ -14,20 +14,20 @@
  * limitations under the License.
  */
 
-import { AgentError, BaseAgent, BaseAgentRunOptions } from "@/agents/base.js";
-import { AgentMeta } from "@/agents/types.js";
-import { GetRunContext } from "@/context.js";
-import { Callback, Emitter } from "@/emitter/emitter.js";
-import { BaseMemory } from "@/memory/base.js";
+import { AgentError, BaseAgent, BaseAgentRunOptions } from '../../base.js';
+import { AgentMeta } from '../../types.js';
+import { GetRunContext } from '../../../context.js';
+import { Callback, Emitter } from '../../../emitter/emitter.js';
+import { BaseMemory } from '../../../memory/base.js';
 import { isTruthy, last } from "remeda";
-import { AssistantMessage, Message, Role, SystemMessage, UserMessage } from "@/backend/message.js";
+import { AssistantMessage, Message, Role, SystemMessage, UserMessage } from '../../../backend/message.js';
 import {
   StreamlitAgentSystemPrompt,
   StreamlitAgentTemplates,
-} from "@/agents/experimental/streamlit/prompts.js";
-import { TokenMemory } from "@/memory/tokenMemory.js";
-import { findFirstPair } from "@/internals/helpers/string.js";
-import { ChatModel, ChatModelOutput } from "@/backend/chat.js";
+} from './prompts.js';
+import { TokenMemory } from '../../../memory/tokenMemory.js';
+import { findFirstPair } from '../../../internals/helpers/string.js';
+import { ChatModel, ChatModelOutput } from '../../../backend/chat.js';
 
 export interface StreamlitAgentInput {
   llm: ChatModel;

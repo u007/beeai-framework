@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-import { Serializable } from "@/internals/serializable.js";
-import { shallowCopy } from "@/serializer/utils.js";
+import { Serializable } from '../internals/serializable.js';
+import { shallowCopy } from '../serializer/utils.js';
 
 export abstract class BackendClient<P, T> extends Serializable {
   public readonly instance: T;

@@ -15,7 +15,7 @@
  */
 
 import { isFunction, isPromise } from "remeda";
-import { getProp } from "@/internals/helpers/object.js";
+import { getProp } from './object.js';
 
 export function isPromiseLike<T>(value: unknown): value is PromiseLike<T> {
   return isPromise(value) || isFunction(getProp(value, ["then"]));

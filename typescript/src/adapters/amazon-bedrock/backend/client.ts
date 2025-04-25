@@ -19,7 +19,7 @@ import {
   AmazonBedrockProviderSettings,
   AmazonBedrockProvider,
 } from "@ai-sdk/amazon-bedrock";
-import { BackendClient } from "@/backend/client.js";
+import { BackendClient } from '../../../backend/client.js';
 
 export type AmazonBedrockClientSettings = AmazonBedrockProviderSettings;
 

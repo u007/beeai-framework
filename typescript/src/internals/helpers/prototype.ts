@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { ClassConstructor } from "@/internals/types.js";
+import { ClassConstructor } from '../types.js';
 import * as R from "remeda";
 
 export function* traversePrototypeChain(value: unknown, excluded?: Set<any>) {
